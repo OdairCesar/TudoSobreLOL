@@ -5,7 +5,7 @@ class Noticia extends SistemaQuery{
     private $noticia, $escritor, $escolha, $lateral1, $lateral2, $lateral3; 
     
     //Metodos
-    private function PesquisarNoticia(){
+    public function PesquisarNoticia(){
         $this->QueryNoticiasPadrao();
         $this->setNoticia($this->resultado);
     }
@@ -32,11 +32,12 @@ class Noticia extends SistemaQuery{
                 $this->lateral[] = 2;
                 break;
         }
+        $this->setNoticia($this->resultado);
     }
-    public function PassarNoticia($escolha){
-        $this->setEscolha($escolha);
+    public function PassarNoticia($escolha, $linkpag){
         $this->PesquisarNoticia();
-        $this->PassarSection();
+        $this->setEscolha($escolha);
+        $this->PassarSection($linkpag);
     }
     public function PassarAside(){
         $this->DefinirAside();
@@ -45,21 +46,27 @@ class Noticia extends SistemaQuery{
         echo "<iframe src='{$this->getNoticia()[$this->getEscolha()][7]}' frameborder='0' gesture='media' allow='encrypted-media' allowfullscreen></iframe>\n";
         echo "</div>\n";
         for($e=0; $e<=2; $e++){
-            echo "<div id='propaganda'>\n";
             $ajuste = $this->lateral[$e];
+            echo "<div id='propaganda'><a href='noticia/?var=$ajuste'>\n";
             echo "<p class='titulo'>{$this->getNoticia()[$ajuste][0]}</p>\n";
             echo "<p>{$this->getNoticia()[$ajuste][1]}</p>\n";
-            echo "</div>\n";
+            echo "</a></div>\n";
         }
     }
-    private function PassarSection(){
+    public function MetaNoticia($escolha){
+        $this->setEscolha($escolha);
+        $this->PesquisarNoticia();
+        echo "<meta name='author' content='{$this->getNoticia()[$this->getEscolha()][3]}'>\n";
+        echo "<meta name='description' content='{$this->getNoticia()[$this->getEscolha()][1]}'>\n";
+    }
+    private function PassarSection($linkpag){
         echo "<hgroup id='enunciado'>";
         echo "<h1>".$this->getNoticia()[$this->getEscolha()][0]."</h1>";
         echo "<h2>".$this->getNoticia()[$this->getEscolha()][1]."</h2>";
         echo "<h3>Por: ".$this->getNoticia()[$this->getEscolha()][3]." Em: ".$this->getNoticia()[$this->getEscolha()][5]."</h3>";
         echo "</hgroup>";
         echo "<article>";
-        echo "<center><img id='tamsection' src='".$this->getNoticia()[$this->getEscolha()][6]."'></center>";
+        echo "<center><img id='tamsection' src='".$linkpag."".$this->getNoticia()[$this->getEscolha()][6]."'></center>";
         echo "<p>".$this->getNoticia()[$this->getEscolha()][2]."</p>";
         if ($this->getNoticia()[$this->getEscolha()][7] == " "){
             echo "";
@@ -76,22 +83,16 @@ class Noticia extends SistemaQuery{
     private function setEscritor($escritor) {
         $this->escritor = $escritor;
     }
-    private function getNoticia(){
+    public function getNoticia(){
 	return $this->noticia;
     }
-    private function setNoticia($noticia){
+    public function setNoticia($noticia){
         $this->noticia = $noticia;
     }
-    private function getPeqNoticia() {
-        return $this->peqNoticia;
-    }
-    private function setPeqNoticia($peqNoticia) {
-        $this->peqNoticia = $peqNoticia;
-    }
-    private function getEscolha() {
+    public function getEscolha() {
         return $this->escolha;
     }
-    private function setEscolha($escolha) {
+    public function setEscolha($escolha) {
         $this->escolha = $escolha;
     }
     private function getLateral1() {

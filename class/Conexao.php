@@ -19,10 +19,10 @@ abstract class Conexao{
 
     //Metodos Especiais
     public function __construct(){
-        $this->setLocal("23.239.85.194");
-        $this->setUsuario("tudosob1_odair");
-        $this->setSenha("odairlimdao");
-        $this->setDb("tudosob1_lol");
+        $this->setLocal("localhost");
+        $this->setUsuario("root");
+        $this->setSenha("");
+        $this->setDb("lol");
         $this->Acessar();
     }
     protected function getConexao(){

@@ -1,19 +1,24 @@
 <?php
-abstract class MenuPagina{
+class MenuPagina{
     //Links para o menu
     private $home, $noticia, $streams, $atualizacao, $tier, $contato;
     
-    protected function LinksPagina(){
+    public function PassarLinks($home, $noticia, $streams, $atualizacao, $tier, $contato){
+        $this->setHome($home);
+        $this->setNoticia($noticia);
+        $this->setStreams($streams);
+        $this->setAtualizacao($atualizacao);
+        $this->setTier($tier);
+        $this->setContato($contato);
     }
-
-    public function MenuPagina(){
+    public function ConstrutorManual(){
         echo "<nav id='menu-principal'><ul>
-                <a link='".$this->getHome()."'><li style='border:none;'>Home</li></a>
-                <a link='".$this->getNoticia()."'><li>Noticias</li></a>
-                <a link='".$this->getStreams()."'><li>Steams</li></a>
-                <a link='".$this->getAtualizacao()."'><li>Atualização</li></a>
-                <a link='".$this->getTier()."'><li>Tier List</li></a>
-                <a link='".$this->getContato()."'><li>Fale Conosco</li></a>
+                <a href='{$this->getHome()}'><li style='border:none;'>Home</li></a>
+                <a href='{$this->getNoticia()}'><li>Noticias</li></a>
+                <a href='{$this->getStreams()}'><li>Steams</li></a>
+                <a href='{$this->getAtualizacao()}'><li>Atualização</li></a>
+                <a href='{$this->getTier()}'><li>Tier List</li></a>
+                <a href='{$this->getContato()}'><li>Fale Conosco</li></a>
             </ul></nav>";
     }
     protected function getHome() {

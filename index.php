@@ -2,7 +2,8 @@
 <html lang="pt-BR">
     <head>
         <?php 
-            include_once 'class/PaginaPrincipal.php';
+            include_once 'class/Pagina.php';
+            $pagina = new Pagina();
             $noturl = isset($_GET['var'])? $_GET['var'] : "0";
         ?>
         <meta charset="UTF-8">
@@ -15,6 +16,8 @@
         <link rel="shortcut icon" href="imagens/mini-logo.ico">
     </head>
     <body>
-       <?php $pagina = new PaginaPrincipal($noturl); ?> 
+        <?php
+            $pagina->paginaInicial($noturl);
+        ?> 
     </body>
 </html>

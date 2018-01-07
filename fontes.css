@@ -168,3 +168,7 @@ div#propaganda p{
     margin: 0px;
     text-align: justify;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
