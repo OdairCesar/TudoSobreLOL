@@ -1,0 +1,201 @@
+/*Divs e Navs*/
+body{
+    background-image: url(imagens/papel-fundo.jpg);
+    background-attachment: fixed;
+    margin: 0px;
+    padding: 0px;
+}
+div#efeitomenu{
+    background-color: rgb(0,162,232); 
+}
+nav#menu-principal{
+    background-color: rgb(0,162,232);
+    width: 1000px;
+    height: 65px;
+    margin: 0px auto;
+    padding: 0px;
+    border-bottom: white solid 1px;
+    position: relative;
+}
+nav#menu-principal ul{
+    background-color: rgb(0,162,232);
+    list-style: none;
+    width: 1000px;
+    height: 65px;
+    margin: 0px auto;
+    padding: 0px;
+    position: fixed;
+    display: block;
+    z-index: 9999;
+}
+nav#menu-principal li{
+    background-color: rgba(0,0,0,.3);
+    padding: 20px 35px 20px 49px;
+    margin: 0px -2px;
+    display: inline-block;
+    color: white;
+    font-family: arial;
+    font-size: 15pt;
+    border-left: solid white 1px;
+    transition: all 1s; 
+}
+nav#menu-principal li:hover{
+    padding: 20px 49px 20px 35px;
+    background-color: rgba(0,0,0,.5);
+}
+div#detalhes{
+    background-color: white;
+    width: 1025px;
+    height: 500px;
+    margin: 150px auto 0px auto;
+    border: 4px outset #2e8bff;
+    transition: all .7s;
+}
+div#detalhes:hover{
+    border: 4px inset #2e8bff;
+}
+div#PrevNoticiaG{
+    background-repeat: round;
+    background-attachment: fixed;
+    margin: 5px 0px 0px 520px;
+    padding: 30px;
+    position: absolute;
+    width: 430px;
+    height: 430px;
+    transition: all 1s;
+    z-index: 1;
+}
+div#PrevNoticiaG:hover{
+    margin-top: 0px;
+    margin-left: 520px;  
+    opacity: 5;
+    width: 465px;
+    height: 440px;
+    box-shadow: -5px 0px 3px #909090;
+}
+div#PrevNoticiaM{
+    background-attachment: fixed;
+    background-repeat: round;
+    margin: 255px 0px 0px 270px;
+    padding: 10px;
+    position: absolute;
+    float: right;
+    width: 225px;
+    height: 220px;
+    transition: all 1s;
+    z-index: 1;
+}
+div#PrevNoticiaM:hover{
+    margin-top: 255px;
+    margin-left: 265px; 
+    width: 230px;
+    height: 250px;
+    box-shadow: 5px -5px 3px #909090;
+}
+div#PrevNoticiaMTwo{
+    background-attachment: fixed;
+    background-repeat: round;
+    margin: 255px 0px 0px 15px;
+    padding: 10px;
+    position: absolute;
+    width: 230px;
+    height: 220px;
+    transition: all 1s;
+    z-index: 1;
+}
+div#PrevNoticiaMTwo:hover{
+    margin-top: 255px;
+    margin-left: -5px;
+    width: 250px;
+    height: 250px;
+    box-shadow: 5px -5px 3px #909090;
+}
+div#PrevNoticiaP{
+    background-attachment: fixed;
+    background-repeat: round;
+    padding: 10px;
+    position: absolute;
+    margin: 5px 0px 0px 15px;
+    width: 480px;
+    height: 225px;
+    transition: all 1s;
+    z-index: 1;
+}
+div#PrevNoticiaP:hover{
+    margin-top: -20px;
+    margin-left: -5px;
+    width: 500px;
+    height: 250px;
+    box-shadow: 5px 5px 3px #909090;
+}
+div#conteudo{
+    background-color: white;
+    width: 1100px;
+    margin: 100px auto 0px auto;
+    height: 1500px;
+    border: 10px outset #2e8bff;
+    transition: all .7s;
+}
+div#conteudo:hover{
+    border: 5px inset #2e8bff;
+}
+div#conteudo section{
+    width: 660px;
+    margin: 0px auto 0px 0px;
+    padding: 10px;
+    float: left;
+}
+hgroup#enunciado{
+    margin: 0px;
+    padding: 0px;
+}
+article{
+    margin: 0px;
+    padding: 0px;
+}
+article img#tamsection{
+    margin: 30px auto 30px auto;
+    width: 580px;
+}
+iframe#youtube{
+    margin: 30px 0px;
+    width: 650px;
+    height: 380px;
+}
+div#conteudo aside{
+    width: 400px;
+    height: 600px;
+    margin: 0px;
+    padding: 0px;
+    float: right;
+}
+div#video{
+    background-color: #eeeeee;
+    width: 380px;
+    height: 280px;
+    padding: 10px;
+    margin: 0px 0px 120px 0px;
+    border-radius: 0px 0px 0px 40px;
+}
+div#video iframe{
+    width: 380px;
+    height: 220px;
+}
+div#propaganda{
+    background-color: #eeeeee;
+    width: 350px;
+    height: 200px;
+    margin: 50px 0px 0px 50px;
+    vertical-align: center;
+    border-radius: 40px 0px 0px 40px;
+    transition: all .5s;
+}
+div#propaganda:hover{
+    background-color: #fa4949;
+    width: 340px;
+    margin-left: 60px; 
+}
+footer{
+    display: inline-block;
+    clear: both;
+}
