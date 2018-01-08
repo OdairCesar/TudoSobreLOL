@@ -18,6 +18,6 @@
     <body>
         <?php
             $pagina->paginaInicial($noturl);
-        ?> 
+        ?>
     </body>
 </html>
