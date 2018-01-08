@@ -4,6 +4,10 @@ require_once 'Noticia.php';
 require_once 'MenuPagina.php';
 class Pagina {
     private $trasicao;
+    
+    public function __construct() {
+        $this->trasicao = new Noticia();
+    }
 
     public function PaginaInicial($noturl) {
         echo "<div id='efeitomenu'>\n";
@@ -16,20 +20,16 @@ class Pagina {
         $destaque = new Destaques();
         $destaque->PrevNoticiaConst("");
         echo "\n<p></p>\n</div>\n";
-
-        echo "<div id='conteudo'>\n<section id='noticia'>\n";
-        $noticia = new Noticia();
-        $noticia->PassarNoticia($noturl, "");
-        echo "</section>\n";
-        echo "<aside>\n";
-        $noticia->PassarAside();
-        echo "</aside>\n";
+        
+        echo "<div id='conteudo'>\n";
+        $this->trasicao->ConstrudorNoticiaSectionAside($noturl, "");
         echo "<footer>\n";
-        echo "</footer>\n</div>\n";
+        echo "</footer>\n";
+        echo "</div>\n";
     }
     public function MetaNot($noturl){
-        $this->trasicao = new Noticia();
-        $this->trasicao->MetaNoticia($noturl);
+        $this->trasicao->ConstrudorNoticiaPadrao($noturl);
+        $this->trasicao->MetaNoticia();
     }
 
     public function PaginaNoticia($noturl) {
@@ -45,12 +45,7 @@ class Pagina {
         echo "\n<p></p>\n</div>\n";
 
         echo "<div id='conteudo'>\n";
-        echo "<section id='noticia'>\n";
-        $this->trasicao->PassarNoticia($noturl, "../");
-        echo "</section>\n";
-        echo "<aside>\n";
-        $this->trasicao->PassarAside();
-        echo "</aside>\n";
+        $this->trasicao->ConstrudorNoticiaSectionAside($noturl, "../");
         echo "<footer>\n";
         echo "</footer>\n";
         echo "</div>\n";

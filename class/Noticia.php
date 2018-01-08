@@ -4,10 +4,23 @@ class Noticia extends SistemaQuery{
     //Atributos
     private $noticia, $escritor, $escolha, $lateral1, $lateral2, $lateral3; 
     
-    //Metodos
-    public function PesquisarNoticia(){
+    //Metodos localizar o que irá no section aside e meta
+    public function ConstrudorNoticiaSectionAside($escolha, $linkpag){
         $this->QueryNoticiasPadrao();
         $this->setNoticia($this->resultado);
+        $this->setEscolha($escolha);
+        
+        //Contruir Section
+        $this->PassarSection($linkpag);
+        
+        //Contruir Aside
+        $this->DefinirAside();
+        $this->PassarAside($linkpag);
+    }
+    public function ConstrudorNoticiaPadrao($escolha){
+        $this->QueryNoticiasPadrao();
+        $this->setNoticia($this->resultado);
+        $this->setEscolha($escolha);
     }
     private function DefinirAside(){
         switch ($this->getEscolha()){
@@ -32,34 +45,11 @@ class Noticia extends SistemaQuery{
                 $this->lateral[] = 2;
                 break;
         }
-        $this->setNoticia($this->resultado);
     }
-    public function PassarNoticia($escolha, $linkpag){
-        $this->PesquisarNoticia();
-        $this->setEscolha($escolha);
-        $this->PassarSection($linkpag);
-    }
-    public function PassarAside(){
-        $this->DefinirAside();
-        echo "<div id='video'>\n";
-        echo "<p>Video Relacionado</p>\n";
-        echo "<iframe src='{$this->getNoticia()[$this->getEscolha()][7]}' frameborder='0' gesture='media' allow='encrypted-media' allowfullscreen></iframe>\n";
-        echo "</div>\n";
-        for($e=0; $e<=2; $e++){
-            $ajuste = $this->lateral[$e];
-            echo "<div id='propaganda'><a href='noticia/?var=$ajuste'>\n";
-            echo "<p class='titulo'>{$this->getNoticia()[$ajuste][0]}</p>\n";
-            echo "<p>{$this->getNoticia()[$ajuste][1]}</p>\n";
-            echo "</a></div>\n";
-        }
-    }
-    public function MetaNoticia($escolha){
-        $this->setEscolha($escolha);
-        $this->PesquisarNoticia();
-        echo "<meta name='author' content='{$this->getNoticia()[$this->getEscolha()][3]}'>\n";
-        echo "<meta name='description' content='{$this->getNoticia()[$this->getEscolha()][1]}'>\n";
-    }
-    private function PassarSection($linkpag){
+    
+    //Passando as informações para codigos de html para serem estilizados
+    public function PassarSection($linkpag){
+        echo "<section id='noticia'>\n";
         echo "<hgroup id='enunciado'>";
         echo "<h1>".$this->getNoticia()[$this->getEscolha()][0]."</h1>";
         echo "<h2>".$this->getNoticia()[$this->getEscolha()][1]."</h2>";
@@ -74,6 +64,33 @@ class Noticia extends SistemaQuery{
             echo "<iframe id='youtube' src='".$this->getNoticia()[$this->getEscolha()][7]."' frameborder='0' gesture='media' allow='encrypted-media' allowfullscreen></iframe>";
         }
         echo "</article>";
+        echo "</section>\n";
+    }
+    public function PassarAside($linkpag){
+        if ($linkpag == "../"){
+            $linkvariavel = "index.php";
+        }else {
+            $linkvariavel = "noticia/";
+        }
+        echo "<aside>\n";
+        echo "<div id='video'>\n";
+        echo "<p>Video Relacionado</p>\n";
+        echo "<iframe src='{$this->getNoticia()[$this->getEscolha()][7]}' frameborder='0' gesture='media' allow='encrypted-media' allowfullscreen></iframe>\n";
+        echo "</div>\n";
+        for($e=0; $e<=1; $e++){
+            $ajuste = $this->lateral[$e];
+            echo "<div id='propaganda'><a href='$linkvariavel?var=$ajuste'>\n";
+            echo "<p class='titulo'>{$this->getNoticia()[$ajuste][0]}</p>\n";
+            echo "<p>{$this->getNoticia()[$ajuste][1]}</p>\n";
+            echo "</a></div>\n";
+        }
+        echo "</aside>\n";
+    }
+    
+    //Meta para pagina noticias
+    public function MetaNoticia(){
+        echo "<meta name='author' content='{$this->getNoticia()[$this->getEscolha()][3]}'>\n";
+        echo "<meta name='description' content='{$this->getNoticia()[$this->getEscolha()][1]}'>\n";
     }
 
         //Meotodos Especiais
