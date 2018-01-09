@@ -7,57 +7,57 @@ class Destaques extends SistemaQuery{
     public function PegarImagem($codlink){
         return $this->resultado[$codlink]["link"];
     }
-    private function PassarNoticiaGrande($linkpag){
+    private function PassarDivGrande($linkpag){
         $this->setTitulo($this->resultado[3][0]);
         $this->setSubtitulo($this->resultado[3][1]);
         $tamanho = "G";
         $this->FormarDiv($tamanho, 3,$linkpag);
     }
-    private function PassarNoticiaPequenaDois($linkpag){
+    private function PassarDivPequenaDois($linkpag){
         $this->setTitulo($this->resultado[2][0]);
         $this->setSubtitulo($this->resultado[2][1]);
         $tamanho = "M";
         $this->FormarDiv($tamanho, 2, $linkpag);
     }
-    private function PassarNoticiaPequena($linkpag){
+    private function PassarDivPequena($linkpag){
         $this->setTitulo($this->resultado[1][0]);
         $this->setSubtitulo($this->resultado[1][1]);
         $tamanho = "MTwo";
         $this->FormarDiv($tamanho, 1, $linkpag);
     }
-    private function PassarNoticiaMedia($linkpag){
+    private function PassarDivMedia($linkpag){
         $this->setTitulo($this->resultado[0][0]);
-        $this->setSubtitulo($this->resultado[0][1]);
+        $this->setSubtitulo("Atualização feita por: ".$this->resultado[0][1]);
         $tamanho = "P";
         $this->FormarDiv($tamanho, 0, $linkpag);
     }
-    private function PassarUltimaAtualizacao(){
-        
-    }
-    private function PassarTierList(){
-        
-    }
-    private function FormarDivEstra(){
-        
-    }
+    
+    //Metodos Construdores Manuais
     private function FormarDiv($tam, $codlink, $linkpag){
-        echo "<a href='index.php?var=$codlink'><div style='background: url(".$linkpag."".$this->resultado[$codlink][6].")' id='PrevNoticia$tam'>\n";
+        echo "<a href='index.php?var=$codlink'><div style='background: url(".$linkpag."".$this->resultado[$codlink][5].")' id='PrevNoticia$tam'>\n";
         echo "<h1>".$this->getTitulo()."</h1>\n";
         echo "<h2>".$this->getSubtitulo()."</h2>\n";
         echo "</div></a>\n";
     }
-
-    //Metodos Especiais
-    public function PrevPagina(){
-        
-    }
     public function PrevNoticiaConst($linkpag){
         $this->QueryNoticiasPadrao();
-        $this->PassarNoticiaGrande($linkpag);
-        $this->PassarNoticiaPequenaDois($linkpag);
-        $this->PassarNoticiaPequena($linkpag);
-        $this->PassarNoticiaMedia($linkpag);
+        $this->PassarDivGrande($linkpag);
+        $this->PassarDivPequenaDois($linkpag);
+        $this->PassarDivPequena($linkpag);
+        $this->PassarDivMedia($linkpag);
     }
+    public function PrevInicialConst($linkpag){
+        $this->QueryAtualizacaoLimit(1);
+        $this->QueryNoticiasLike("titulo", "%Likkrit%");
+        $this->QueryTierLimit(1);
+        $this->QueryNoticiasLike("titulo", "%INTZ%");
+        $this->PassarDivGrande($linkpag);
+        $this->PassarDivPequenaDois($linkpag);
+        $this->PassarDivPequena($linkpag);
+        $this->PassarDivMedia($linkpag);
+    }
+    
+    //Metodos Especiais
     private function setId($id){
         $this->id = $id;
     }

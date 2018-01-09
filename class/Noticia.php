@@ -17,8 +17,28 @@ class Noticia extends SistemaQuery{
         $this->DefinirAside();
         $this->PassarAside($linkpag);
     }
+    public function ConstrudorInicioSectionAside($escolha, $linkpag){
+        $this->QueryAtualizacaoLimit(1);
+        $this->QueryNoticiasLike("titulo", "%Likkrit%");
+        $this->QueryTierLimit(1);
+        $this->QueryNoticiasLike("titulo", "%INTZ%");
+        $this->setNoticia($this->resultado);
+        $this->setEscolha($escolha);
+        
+        //Contruir Section
+        $this->PassarSection($linkpag);
+        
+        //Construir Aside
+        $this->DefinirAside();
+        $this->PassarAside($linkpag);
+    }
     public function ConstrudorNoticiaPadrao($escolha){
         $this->QueryNoticiasPadrao();
+        $this->setNoticia($this->resultado);
+        $this->setEscolha($escolha);
+    }
+    public function ConstrudorAtualizacaoPadrao($escolha){
+        $this->QueryAtualizacaoPadrao();
         $this->setNoticia($this->resultado);
         $this->setEscolha($escolha);
     }
@@ -53,15 +73,15 @@ class Noticia extends SistemaQuery{
         echo "<hgroup id='enunciado'>";
         echo "<h1>".$this->getNoticia()[$this->getEscolha()][0]."</h1>";
         echo "<h2>".$this->getNoticia()[$this->getEscolha()][1]."</h2>";
-        echo "<h3>Por: ".$this->getNoticia()[$this->getEscolha()][3]." Em: ".$this->getNoticia()[$this->getEscolha()][5]."</h3>";
+        echo "<h3>Por: ".$this->getNoticia()[$this->getEscolha()][3]." Em: ".$this->getNoticia()[$this->getEscolha()][2]."</h3>";
         echo "</hgroup>";
         echo "<article>";
-        echo "<center><img id='tamsection' src='".$linkpag."".$this->getNoticia()[$this->getEscolha()][6]."'></center>";
-        echo "<p>".$this->getNoticia()[$this->getEscolha()][2]."</p>";
-        if ($this->getNoticia()[$this->getEscolha()][7] == " "){
+        echo "<center><img id='tamsection' src='".$linkpag."".$this->getNoticia()[$this->getEscolha()][5]."'></center>";
+        echo "<p>".$this->getNoticia()[$this->getEscolha()][7]."</p>";
+        if ($this->getNoticia()[$this->getEscolha()][6] == " "){
             echo "";
         }else{
-            echo "<iframe id='youtube' src='".$this->getNoticia()[$this->getEscolha()][7]."' frameborder='0' gesture='media' allow='encrypted-media' allowfullscreen></iframe>";
+            echo "<iframe id='youtube' src='".$this->getNoticia()[$this->getEscolha()][6]."' frameborder='0' gesture='media' allow='encrypted-media' allowfullscreen></iframe>";
         }
         echo "</article>";
         echo "</section>\n";
@@ -75,7 +95,7 @@ class Noticia extends SistemaQuery{
         echo "<aside>\n";
         echo "<div id='video'>\n";
         echo "<p>Video Relacionado</p>\n";
-        echo "<iframe src='{$this->getNoticia()[$this->getEscolha()][7]}' frameborder='0' gesture='media' allow='encrypted-media' allowfullscreen></iframe>\n";
+        echo "<iframe src='{$this->getNoticia()[$this->getEscolha()][6]}' frameborder='0' gesture='media' allow='encrypted-media' allowfullscreen></iframe>\n";
         echo "</div>\n";
         for($e=0; $e<=1; $e++){
             $ajuste = $this->lateral[$e];
@@ -89,6 +109,7 @@ class Noticia extends SistemaQuery{
     
     //Meta para pagina noticias
     public function MetaNoticia(){
+        echo "<title>{$this->getNoticia()[$this->getEscolha()][0]}</title>\n";
         echo "<meta name='author' content='{$this->getNoticia()[$this->getEscolha()][3]}'>\n";
         echo "<meta name='description' content='{$this->getNoticia()[$this->getEscolha()][1]}'>\n";
     }

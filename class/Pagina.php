@@ -18,11 +18,11 @@ class Pagina {
     
         echo "<div id='detalhes'>\n<p></p>\n";
         $destaque = new Destaques();
-        $destaque->PrevNoticiaConst("");
+        $destaque->PrevInicialConst("");
         echo "\n<p></p>\n</div>\n";
         
         echo "<div id='conteudo'>\n";
-        $this->trasicao->ConstrudorNoticiaSectionAside($noturl, "");
+        $this->trasicao->ConstrudorInicioSectionAside($noturl, "");
         echo "<footer>\n";
         echo "</footer>\n";
         echo "</div>\n";
