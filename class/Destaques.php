@@ -27,7 +27,7 @@ class Destaques extends SistemaQuery{
     }
     private function PassarDivMedia($linkpag){
         $this->setTitulo($this->resultado[0][0]);
-        $this->setSubtitulo("Atualização feita por: ".$this->resultado[0][1]);
+        $this->setSubtitulo($this->resultado[0][1]);
         $tamanho = "P";
         $this->FormarDiv($tamanho, 0, $linkpag);
     }
