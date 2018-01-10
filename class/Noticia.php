@@ -93,10 +93,10 @@ class Noticia extends SistemaQuery{
             $linkvariavel = "noticia/";
         }
         echo "<aside>\n";
-        echo "<div id='video'>\n";
+        /*echo "<div id='video'>\n";
         echo "<p>Video Relacionado</p>\n";
         echo "<iframe src='{$this->getNoticia()[$this->getEscolha()][6]}' frameborder='0' gesture='media' allow='encrypted-media' allowfullscreen></iframe>\n";
-        echo "</div>\n";
+        echo "</div>\n";*/
         for($e=0; $e<=1; $e++){
             $ajuste = $this->lateral[$e];
             echo "<div id='propaganda'><a href='$linkvariavel?var=$ajuste'>\n";
