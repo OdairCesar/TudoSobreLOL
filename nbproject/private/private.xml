@@ -22,9 +22,13 @@
         <group>
             <file>file:/C:/wamp64/www/TudoSobreLOL/class/Noticia.php</file>
             <file>file:/C:/wamp64/www/TudoSobreLOL/class/Conexao.php</file>
+            <file>file:/C:/wamp64/www/TudoSobreLOL/class/QueryAtualizacao.php</file>
             <file>file:/C:/wamp64/www/TudoSobreLOL/class/SistemaQuery.php</file>
             <file>file:/C:/wamp64/www/TudoSobreLOL/class/MenuPagina.php</file>
+            <file>file:/C:/wamp64/www/TudoSobreLOL/class/QueryInicio.php</file>
+            <file>file:/C:/wamp64/www/TudoSobreLOL/class/QueryNoticia.php</file>
             <file>file:/C:/wamp64/www/TudoSobreLOL/class/Pagina.php</file>
+            <file>file:/C:/wamp64/www/TudoSobreLOL/class/QueryTier.php</file>
             <file>file:/C:/wamp64/www/TudoSobreLOL/class/Destaques.php</file>
         </group>
     </open-files>

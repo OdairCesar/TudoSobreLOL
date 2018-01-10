@@ -1,0 +1,321 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"i",
+				"idadeAluno"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"tra",
+				"transition"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"fon",
+				"font-size-adjust"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"tras",
+				"transition"
+			],
+			[
+				"borde",
+				"border"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"inl",
+				"inline"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"border",
+				"border-left"
+			],
+			[
+				"inline",
+				"inline-grid"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"not",
+				"noturl"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"WI",
+				"width"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"align",
+				"vertical-align"
+			],
+			[
+				"text-a",
+				"text-align"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"mys",
+				"mysqli_query"
+			],
+			[
+				"sub",
+				"subtitulo"
+			],
+			[
+				"prin",
+				"print_r"
+			],
+			[
+				"mysql_db",
+				"mysql_db_query"
+			],
+			[
+				"ti",
+				"title\tTag"
+			],
+			[
+				"connet",
+				"connect_errno"
+			],
+			[
+				"m",
+				"mysqlone"
+			],
+			[
+				"MYSQL",
+				"mysql_connect"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/wamp64/www/AulasJS/index.html",
+		"/C/wamp64/www/AulasJS/aula01.js",
+		"/C/wamp64/www/TudoSobreLOL/class/Destaques.php",
+		"/C/wamp64/www/TudoSobreLOL/index.php",
+		"/C/wamp64/www/TudoSobreLOL/class/Conexao.php",
+		"/C/wamp64/www/TudoSobreLOL/fontes.css",
+		"/C/wamp64/www/TudoSobreLOL/estilo.css",
+		"/C/wamp64/www/TudoSobreLOL/class/Noticia.php",
+		"/C/wamp64/www/TudoSobreLOL/class/PaginaPrincipal.php",
+		"/C/wamp64/www/TudoSobreLOL/class/MenuPagina.php",
+		"/C/wamp64/www/TudoSobreLOL/class/PrevNoticia.php",
+		"/C/wamp64/www/TudoSobreLOL/class/Destaque.php",
+		"/C/Users/Odair/Documents/Sites criados/Tudo Sobre LOL/index.html",
+		"/C/Users/Odair/AppData/Local/Temp/index.php",
+		"/C/wamp64/www/TudoSobreLOL/class/Conectando.php",
+		"/C/Users/Odair/Documents/Sites criados/TudoSobreLOL3.0/class/Conectando.php",
+		"/C/Users/Odair/Documents/dumps/lolzinho2.sql",
+		"/C/Users/Odair/Documents/dumps/lolzinho.sql",
+		"/C/wamp64/www/TudoSobreLOL/teste get.html",
+		"/C/wamp64/www/TudoSobreLOL/class/TesteDeClasses.php",
+		"/C/Users/Odair/Documents/Sites criados/Google Glass/_css/fotos.css",
+		"/C/Users/Odair/Documents/Sites criados/Tudo Sobre LOL/_css/imagens.css",
+		"/C/Users/Odair/Documents/Sites criados/Tudo Sobre LOL/_css/estilo.css",
+		"/C/Users/Odair/Desktop/teste get.html",
+		"/C/Users/Odair/Desktop/teste get",
+		"/C/wamp64/www/Animal/index.php",
+		"/C/wamp64/www/TesteAcessoSQL/index.php",
+		"/C/wamp64/www/TudoSobreLOL/class/Test.php",
+		"/C/wamp64/www/TesteAcessoSQL/test.php"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 211.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
