@@ -1,4 +1,9 @@
 <?php
+/**
+ * Description of Noticias
+ *
+ * @author Odair
+ */
 require_once 'Destaques.php';
 require_once 'Noticia.php';
 require_once 'MenuPagina.php';

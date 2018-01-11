@@ -1,4 +1,9 @@
 <?php
+/**
+ * Description of Noticias
+ *
+ * @author Odair
+ */
 require_once 'SistemaQuery.php';
 class Destaques extends SistemaQuery{
     private $titulo, $subtitulo, $url;

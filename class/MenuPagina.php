@@ -1,4 +1,9 @@
 <?php
+/**
+ * Description of Noticias
+ *
+ * @author Odair
+ */
 class MenuPagina{
     //Links para o menu
     private $home, $noticia, $streams, $atualizacao, $tier, $contato;

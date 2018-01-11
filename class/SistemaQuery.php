@@ -1,4 +1,9 @@
 <?php
+/**
+ * Description of Noticias
+ *
+ * @author Odair
+ */
 require_once 'Conexao.php';
 abstract class SistemaQuery extends Conexao{
     //Atributos

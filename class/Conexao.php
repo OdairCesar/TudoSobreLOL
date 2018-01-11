@@ -1,4 +1,9 @@
 <?php
+/**
+ * Description of Noticias
+ *
+ * @author Odair
+ */
 abstract class Conexao{
     //Atributos
     private $Local, $usuario, $senha, $db;

@@ -2,14 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
         <file>
-            <url>class/SistemaQuery.php</url>
-            <bookmark id="1">
-                <name/>
-                <line>30</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
             <url>class/PrevNoticia.php</url>
             <bookmark id="2">
                 <name/>
@@ -17,19 +9,18 @@
                 <key/>
             </bookmark>
         </file>
+        <file>
+            <url>class/SistemaQuery.php</url>
+            <bookmark id="1">
+                <name/>
+                <line>35</line>
+                <key/>
+            </bookmark>
+        </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/TudoSobreLOL/class/Noticia.php</file>
-            <file>file:/C:/wamp64/www/TudoSobreLOL/class/Conexao.php</file>
-            <file>file:/C:/wamp64/www/TudoSobreLOL/class/QueryAtualizacao.php</file>
-            <file>file:/C:/wamp64/www/TudoSobreLOL/class/SistemaQuery.php</file>
-            <file>file:/C:/wamp64/www/TudoSobreLOL/class/MenuPagina.php</file>
-            <file>file:/C:/wamp64/www/TudoSobreLOL/class/QueryInicio.php</file>
-            <file>file:/C:/wamp64/www/TudoSobreLOL/class/QueryNoticia.php</file>
-            <file>file:/C:/wamp64/www/TudoSobreLOL/class/Pagina.php</file>
-            <file>file:/C:/wamp64/www/TudoSobreLOL/class/QueryTier.php</file>
-            <file>file:/C:/wamp64/www/TudoSobreLOL/class/Destaques.php</file>
+            <file>file:/C:/wamp64/www/TudoSobreLOL/class/Atualizacao.php</file>
         </group>
     </open-files>
 </project-private>

@@ -1,4 +1,9 @@
 <?php
+/**
+ * Description of Noticias
+ *
+ * @author Odair
+ */
 require_once 'SistemaQuery.php';
 class QueryAtualizacao extends SistemaQuery{
     //Atributos
