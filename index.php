@@ -3,8 +3,7 @@
     <head>
         <?php 
             include_once 'class/Pagina.php';
-            $pagina = new Pagina();
-            $noturl = isset($_GET['var'])? $_GET['var'] : "0";
+            $noturl = isset($_GET['var'])? $_GET['var'] : 0;
         ?>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-witdh, initial-scale=1">
@@ -17,7 +16,7 @@
     </head>
     <body>
         <?php
-            $pagina->paginaInicial($noturl);
+            $pagina = new Pagina("Inicio", 0);
         ?>
     </body>
 </html>

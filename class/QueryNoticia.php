@@ -10,19 +10,19 @@ class QueryNoticia extends SistemaQuery{
     public $resposta;
 
     //Metodos
-    protected function QueryLimit($limit){
+    public function QueryLimit($limit){
         $this->setQuery("SELECT * FROM noticias ORDER BY lancamento desc LIMIT $limit");
         $this->ResponderQuery();
     }
-    protected function QueryColumn($column){
+    public function QueryColumn($column){
         $this->setQuery("SELECT $column FROM noticias ORDER BY lancamento desc");
         $this->ResponderQuery();
     }
-    protected function QueryWhere($where){
+    public function QueryWhere($where){
         $this->setQuery("SELECT * FROM noticias WHERE $where ORDER BY lancamento  desc");
         $this->ResponderQuery();
     }
-    protected function QueryOrderBy($order){
+    public function QueryOrderBy($order){
         $this->setQuery("SELECT * FROM noticias ORDER BY $order desc");
         $this->ResponderQuery();
     }

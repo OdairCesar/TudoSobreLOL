@@ -11,7 +11,7 @@ class Atualizacao extends Conteudo{
     
     //Metodos
     protected function MontarArtigo(){
-        echo "<img src='{$this->getImagem()}'>";
+        echo "<img src='../{$this->getImagem()}'>";
         echo "<p>{$this->getCampeao()}</p>";
         echo "<p>{$this->getHabilidade()}</p>";
         echo "<p>{$this->getMudanca()}</p>";
@@ -32,11 +32,15 @@ class Atualizacao extends Conteudo{
         $this->setCampeao($campeao);
         $this->setHabilidade($habilidade);
         $this->setMudanca($mudanca);
+        echo "<div id='conteudo'>";
         echo "<article>";
+        echo "<section>";
         $this->MontarHgroup();
         $this->MontarArtigo();
-        echo "</article>";
+        echo "</section>";
         $this->MontarAside();
+        echo "</article>";
+        echo "</div>";
     }
     //Metodos Getter e Setter
     public function getCampeao() {

@@ -10,23 +10,23 @@ class QueryAtualizacao extends SistemaQuery{
     public $resposta;
 
     //Metodos
-    protected function QueryLimit($limit){
+    public function QueryLimit($limit){
         $this->setQuery("SELECT * FROM atualizacao ORDER BY lancamento desc LIMIT $limit");
         $this->ResponderQuery();
     }
-    protected function QueryColumn($column){
+    public function QueryColumn($column){
         $this->setQuery("SELECT $column FROM atualizacao ORDER BY lancamento desc");
         $this->ResponderQuery();
     }
-    protected function QueryWhere($where){
+    public function QueryWhere($where){
         $this->setQuery("SELECT * FROM atualizacao WHERE $where ORDER BY lancamento  desc");
         $this->ResponderQuery();
     }
-    protected function QueryOrderBy($order){
+    public function QueryOrderBy($order){
         $this->setQuery("SELECT * FROM atualizacao ORDER BY $order desc");
         $this->ResponderQuery();
     }
-    protected function ResponderQuery(){
+    public function ResponderQuery(){
         $select = $this->conexao->query($this->getQuery());
         while($res = $select->fetch(PDO::FETCH_OBJ)){
             $this->resposta[] = array($res->versao, $res->descricao, $res->lancamento, $res->criadores, $res->argencia, $res->imagem, $res->video, $res->campeao, $res->habilidade, $res->mudanca);

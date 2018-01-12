@@ -11,7 +11,7 @@
     </head>
     <body>
         <?php
-            $pagina = new Pagina("Noticia", 0);
+            $pagina = new Pagina("Atualizacao", 0);
         ?>
     </body>
 </html>

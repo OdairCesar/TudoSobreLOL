@@ -10,26 +10,26 @@ class QueryTier extends SistemaQuery{
     public $resposta;
 
     //Metodos
-    protected function QueryLimit($limit){
-        $this->setQuery("SELECT * FROM tier ORDER BY lancamento desc LIMIT $limit");
+    public function QueryLimit($limit){
+        $this->setQuery("SELECT * FROM tier_s ORDER BY lancamento desc LIMIT $limit");
         $this->ResponderQuery();
     }
-    protected function QueryColumn($column){
-        $this->setQuery("SELECT $column FROM tier ORDER BY lancamento desc");
+    public function QueryColumn($column){
+        $this->setQuery("SELECT $column FROM tier_s ORDER BY lancamento desc");
         $this->ResponderQuery();
     }
-    protected function QueryWhere($where){
-        $this->setQuery("SELECT * FROM tier WHERE $where ORDER BY lancamento  desc");
+    public function QueryWhere($where){
+        $this->setQuery("SELECT * FROM tier_s WHERE $where ORDER BY lancamento  desc");
         $this->ResponderQuery();
     }
-    protected function QueryOrderBy($order){
-        $this->setQuery("SELECT * FROM tier ORDER BY $order desc");
+    public function QueryOrderBy($order){
+        $this->setQuery("SELECT * FROM tier_s ORDER BY $order desc");
         $this->ResponderQuery();
     }
     protected function ResponderQuery(){
         $select = $this->conexao->query($this->getQuery());
         while($res = $select->fetch(PDO::FETCH_OBJ)){
-            $this->resposta[] = array($res->versao, $res->descricao, $res->lancamento, $res->criador, $res->site_origem, $res->imagem, $res->video, $res->nufs, $res->nerfs, $res->tabela, $res->expricacao);
+            $this->resposta[] = array($res->versao, $res->descricao, $res->lancamento, $res->criador, $res->site_origem, $res->imagem, $res->video, $res->bufs, $res->nerfs, $res->tabela, $res->expricacao);
         }
     }
 

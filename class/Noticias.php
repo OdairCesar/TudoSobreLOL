@@ -11,20 +11,24 @@ class Noticias extends Conteudo {
     
     //Metodos
     public function MontarArtigo(){
-        echo "<img src='{$this->getImagem()}'>";
+        echo "<center><img id='tamsection' src='../{$this->getImagem()}'></center>";
         echo "<p>{$this->getArtigo()}</p>";
-        echo "<iframe src='{$this->getVideo()}'></iframe>";
+        echo "<iframe id='youtube' src='{$this->getVideo()}'></iframe>";
     }
     
     //Metodo construdor
     public function __construct($titulo, $subtitulo, $autoria, $data, $imagem, $video, $artigo, $pagRelaciona) {
         parent::__construct($titulo, $subtitulo, $autoria, $data, $imagem, $video, $pagRelaciona);
         $this->setArtigo($artigo);
+        echo "<div id='conteudo'>";
+        echo "<section>";
         echo "<article>";
         $this->MontarHgroup();
         $this->MontarArtigo();
         echo "</article>";
+        echo "</section>";
         $this->MontarAside();
+        echo "</div>";
     }
 
     //Metodos Getter e Setter

@@ -10,28 +10,28 @@ class QueryInicio extends SistemaQuery{
     public $resposta;
     
     //Metodos
-    protected function QueryNotUm($where){
+    public function QueryNotUm($where){
         $this->setQuery("SELECT * FROM noticias WHERE $where");
         $select = $this->conexao->query($this->getQuery());
         while($res = $select->fetch(PDO::FETCH_OBJ)){
             $this->resposta[] = array($res->titulo, $res->subtitulo, $res->lancamento, $res->escritor, $res->argencia, $res->imagem, $res->video, $res->artigo);
         }
     }
-    protected function QueryNotDois($where){
+    public function QueryNotDois($where){
         $this->setQuery("SELECT * FROM noticias WHERE $where");
         $select = $this->conexao->query($this->getQuery());
         while($res = $select->fetch(PDO::FETCH_OBJ)){
             $this->resposta[] = array($res->titulo, $res->subtitulo, $res->lancamento, $res->escritor, $res->argencia, $res->imagem, $res->video, $res->artigo);
         }
     }
-    protected function QueryAtualizacao($where){
+    public function QueryAtualizacao($where){
         $this->setQuery("SELECT * FROM atualizacao WHERE $where");
         $select = $this->conexao->query($this->getQuery());
         while($res = $select->fetch(PDO::FETCH_OBJ)){
             $this->resposta[] = array($res->versao, $res->descricao, $res->lancamento, $res->criadores, $res->argencia, $res->imagem, $res->video, $res->campeao, $res->habilidade, $res->mudanca);
         }
     }
-    protected function QueryTier($where){
+    public function QueryTier($where){
         $this->setQuery("SELECT * FROM noticias WHERE $where");
         $select = $this->conexao->query($this->getQuery());
         while($res = $select->fetch(PDO::FETCH_OBJ)){

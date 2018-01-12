@@ -10,25 +10,25 @@ abstract class Conteudo{
     
     //Metodos
     protected function MontarHgroup(){
-        echo "<hgruop>\n";
-        echo "<h1>{$this->getTitulo()}</h1>";
-        echo "<h2>{$this->getSubtitulo()}</h2>";
-        echo "<h3>Por: {$this->getAutotia()} Em:</h3>{$this->getData()}";
-        echo "</hgroup>";
+        echo "<hgroup id='enunciado'>\n";
+        echo "<h1>{$this->getTitulo()}</h1>\n";
+        echo "<h2>{$this->getSubtitulo()}</h2>\n";
+        echo "<h3>Por: {$this->getAutoria()} Em:{$this->getData()}</h3>\n";
+        echo "</hgroup>\n";
     }
     protected function MontarAside(){
-        echo "<aside>";
-        echo "<div>";
-        echo "<p>Video relacionado</p>";
-        echo "<iframe src='{$this->getVideo()}'></iframe>";
-        echo "</div>";
+        echo "<aside>\n";
+        echo "<div id='video'>\n";
+        echo "<p>Video relacionado</p>\n";
+        echo "<iframe src='{$this->getVideo()}'></iframe>\n";
+        echo "</div>\n";
         for($e=0; $e<2; $e++){
-            echo "<div>";
-            echo "<p>{$this->getPagRelaciona()[$e][0]}</p>";
-            echo "<p>{$this->getPagRelaciona()[$e][1]}</p>";
-            echo "</div>";
+            echo "<div id='propaganda'>\n";
+            echo "<p>{$this->getPagRelaciona()[$e][0]}</p>\n";
+            echo "<p>{$this->getPagRelaciona()[$e][1]}</p>\n";
+            echo "</div>\n";
         }
-        echo "/aside>";
+        echo "</aside>\n";
     }
     
     //Metodo Contrudor
