@@ -4,23 +4,24 @@
  *
  * @author Odair
  */
-class Detalhes {
+class Detalhes{
     //Atributos
-    private $titulo, $subtitulo, $tamanho;
+    private $titulo, $subtitulo, $imagem, $tamanho;
     
     //Metodos
-    private function MontarDiv(){
-        echo "<div id='PrevNoticia{$this->getTamanho()}'>";
-        echo "<h1>{$this->getTitulo()}</h1>";
-        echo "<h2>{$this->getSubtitulo()}</h2>";
-        echo "</div>";
-    }
-    //Metodo construdor
-    public function __construct($titulo, $subtitulo, $tamanho) {
+    public function MontarDiv($titulo, $subtitulo, $imagem, $tamanho, $logico){
         $this->setTitulo($titulo);
         $this->setSubtitulo($subtitulo);
         $this->setTamanho($tamanho);
-        $this->MontarDiv();
+        $this->setImagem($imagem);
+        if ($logico){
+            echo "<div id='PrevNoticia{$this->getTamanho()}' style='background: url(../{$this->getImagem()})'>";
+        }else{
+            echo "<div id='PrevNoticia{$this->getTamanho()}' style='background: url({$this->getImagem()})'>";
+        }
+        echo "<h1>{$this->getTitulo()}</h1>";
+        echo "<h2>{$this->getSubtitulo()}</h2>";
+        echo "</div>";
     }
 
     //Metodo Getter e Setter
@@ -33,13 +34,19 @@ class Detalhes {
     public function getTamanho() {
         return $this->tamanho;
     }
-    protected function setTitulo($titulo) {
+    public function setTitulo($titulo) {
         $this->titulo = $titulo;
     }
-    protected function setSubtitulo($subtitulo) {
+    public function setSubtitulo($subtitulo) {
         $this->subtitulo = $subtitulo;
     }
-    protected function setTamanho($tamanho) {
+    public function setTamanho($tamanho) {
         $this->tamanho = $tamanho;
+    }
+    public function getImagem() {
+        return $this->imagem;
+    }
+    public function setImagem($imagem) {
+        $this->imagem = $imagem;
     }
 }

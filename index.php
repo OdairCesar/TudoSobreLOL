@@ -12,7 +12,7 @@
         <title>Tudo Sobre LOL</title>
         <link href="estilo.css" type="text/css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="fontes.css">
-        <link rel="shortcut icon" href="imagens/mini-logo.ico">
+        <link rel="shortcut icon" href="imagens/logo-lol.jpg">
     </head>
     <body>
         <?php

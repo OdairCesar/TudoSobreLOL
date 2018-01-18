@@ -24,7 +24,7 @@ abstract class Conteudo{
         echo "</div>\n";
         for($e=0; $e<2; $e++){
             echo "<div id='propaganda'>\n";
-            echo "<p>{$this->getPagRelaciona()[$e][0]}</p>\n";
+            echo "<p class='titulo'>{$this->getPagRelaciona()[$e][0]}</p>\n";
             echo "<p>{$this->getPagRelaciona()[$e][1]}</p>\n";
             echo "</div>\n";
         }

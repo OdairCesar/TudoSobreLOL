@@ -17,6 +17,7 @@ class MenuPagina{
         $this->setContato($contato);
     }
     public function ConstrutorManual(){
+        echo "<div id='efeitomenu'>";
         echo "<nav id='menu-principal'><ul>
                 <a href='{$this->getHome()}'><li style='border:none;'>Home</li></a>
                 <a href='{$this->getNoticia()}'><li>Noticias</li></a>
@@ -25,6 +26,7 @@ class MenuPagina{
                 <a href='{$this->getTier()}'><li>Tier List</li></a>
                 <a href='{$this->getContato()}'><li>Fale Conosco</li></a>
             </ul></nav>";
+        echo "</div>";
     }
     protected function getHome() {
         return $this->home;
