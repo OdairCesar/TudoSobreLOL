@@ -16,7 +16,7 @@
     </head>
     <body>
         <?php
-            $pagina = new Pagina("Inicio", 0);
+            $pagina = new Pagina("Inicio", $noturl);
         ?>
     </body>
 </html>

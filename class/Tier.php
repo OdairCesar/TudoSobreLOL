@@ -10,16 +10,20 @@ class Tier extends Conteudo{
     private $bufs, $nerfs, $tabela, $especificacoes;
     
     //Metodos
-    public function MontarArtigo(){
-        echo "<p><b>{$this->getBufs()}</b></p>\n";
-        echo "<p><b>{$this->getNerfs()}</b></p>\n";
-        echo "<center><img src='../{$this->getTabela()}'></center>\n";
+    public function MontarArtigo($logicLink){
+        echo "<p><b>Bufs:</b> {$this->getBufs()}</p>\n";
+        echo "<p><b>Nerfs:</b> {$this->getNerfs()}</p>\n";
+        if ($logicLink == true){
+            echo "<center><img src='{$this->getTabela()}'></center>\n";
+        }else{
+            echo "<center><img src='../{$this->getTabela()}'></center>\n";
+        }
         echo "<p>{$this->getEspecificacoes()}</p>\n";
         echo "<iframe id='youtube' src='{$this->getVideo()}'></iframe>\n";
     }
     
     //Metodo Contrudor
-    public function __construct($titulo, $subtitulo, $autoria, $data, $imagem, $video, $bufs, $nerfs, $tabela, $especificacoes, $pagRelaciona) {
+    public function __construct($logicLink, $titulo, $subtitulo, $autoria, $data, $imagem, $video, $bufs, $nerfs, $tabela, $especificacoes, $pagRelaciona) {
         parent::__construct($titulo, $subtitulo, $autoria, $data, $imagem, $video, $pagRelaciona);
         $this->setBufs($bufs);
         $this->setNerfs($nerfs);
@@ -29,7 +33,7 @@ class Tier extends Conteudo{
         echo "<section>";
         echo "<article>\n";
         $this->MontarHgroup();
-        $this->MontarArtigo();
+        $this->MontarArtigo($logicLink);
         echo "</article>\n";
         echo "</section>";
         $this->MontarAside();

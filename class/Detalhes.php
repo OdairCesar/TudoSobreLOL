@@ -9,19 +9,19 @@ class Detalhes{
     private $titulo, $subtitulo, $imagem, $tamanho;
     
     //Metodos
-    public function MontarDiv($titulo, $subtitulo, $imagem, $tamanho, $logico){
+    public function MontarDiv($titulo, $subtitulo, $imagem, $tamanho, $logico, $link){
         $this->setTitulo($titulo);
         $this->setSubtitulo($subtitulo);
         $this->setTamanho($tamanho);
         $this->setImagem($imagem);
         if ($logico){
-            echo "<div id='PrevNoticia{$this->getTamanho()}' style='background: url(../{$this->getImagem()})'>";
+            echo "<a href='index.php?var=$link'><div id='PrevNoticia{$this->getTamanho()}' style='background: url(../{$this->getImagem()})'>";
         }else{
-            echo "<div id='PrevNoticia{$this->getTamanho()}' style='background: url({$this->getImagem()})'>";
+            echo "<a href='index.php?var=$link'><div id='PrevNoticia{$this->getTamanho()}' style='background: url({$this->getImagem()})'>";
         }
         echo "<h1>{$this->getTitulo()}</h1>";
         echo "<h2>{$this->getSubtitulo()}</h2>";
-        echo "</div>";
+        echo "</div></a>";
     }
 
     //Metodo Getter e Setter

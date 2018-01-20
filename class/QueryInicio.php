@@ -32,10 +32,10 @@ class QueryInicio extends SistemaQuery{
         }
     }
     public function QueryTier($where){
-        $this->setQuery("SELECT * FROM noticias WHERE $where");
+        $this->setQuery("SELECT * FROM tier_s WHERE $where");
         $select = $this->conexao->query($this->getQuery());
         while($res = $select->fetch(PDO::FETCH_OBJ)){
-            $this->resposta[] = array($res->versao, $res->descricao, $res->lancamento, $res->criador, $res->site_origem, $res->imagem, $res->video, $res->nufs, $res->nerfs, $res->tabela, $res->expricacao);
+            $this->resposta[] = array($res->versao, $res->descricao, $res->lancamento, $res->criador, $res->site_origem, $res->imagem, $res->video, $res->bufs, $res->nerfs, $res->tabela, $res->expricacao);
         }
     }
 

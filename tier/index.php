@@ -6,7 +6,7 @@
         <link rel="shortcut icon" href="../imagens/logo-lol.jpg">
         <?php
             include_once '../class/Pagina.php';
-            $noturl = isset($_GET['var'])? $_GET['var'] : 1;
+            $noturl = isset($_GET['var'])? $_GET['var'] : 0;
         ?>
     </head>
     <body>

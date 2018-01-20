@@ -11,7 +11,7 @@
     </head>
     <body>
         <?php
-            $pagina = new Pagina("Atualizacao", $noturl);
+            $pagina = new Pagina("Stream", $noturl);
         ?>
     </body>
 </html>

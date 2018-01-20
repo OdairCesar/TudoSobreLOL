@@ -10,12 +10,16 @@ class Atualizacao extends Conteudo{
     private $campeao, $habilidade, $mudanca;
     
     //Metodos
-    protected function MontarArtigo(){
-        echo "<img src='../{$this->getImagem()}'>";
+    protected function MontarArtigo($logicLink){
+        if ($logicLink == "true"){
+            echo "<center><img src='{$this->getImagem()}'></center>";
+        } else {
+            echo "<center><img src='../{$this->getImagem()}'></center>";
+        }
         echo "<p>{$this->getCampeao()}</p>";
         echo "<p>{$this->getHabilidade()}</p>";
         echo "<p>{$this->getMudanca()}</p>";
-        echo "<iframe src='{$this->getVideo()}'></iframe>";
+        echo "<iframe id='youtube' src='{$this->getVideo()}'></iframe>";
     }
     public function MontarMaisHabilidade($habilidade){
         $this->setHabilidade($habilidade);
@@ -27,7 +31,7 @@ class Atualizacao extends Conteudo{
     }
 
     //Metodo Construdor
-    public function __construct($titulo, $subtitulo, $autoria, $data, $imagem, $video, $campeao, $habilidade, $mudanca, $pagRelaciona) {
+    public function __construct($logicLink, $titulo, $subtitulo, $autoria, $data, $imagem, $video, $campeao, $habilidade, $mudanca, $pagRelaciona) {
         parent::__construct($titulo, $subtitulo, $autoria, $data, $imagem, $video, $pagRelaciona);
         $this->setCampeao($campeao);
         $this->setHabilidade($habilidade);
@@ -36,7 +40,7 @@ class Atualizacao extends Conteudo{
         echo "<article>";
         echo "<section>";
         $this->MontarHgroup();
-        $this->MontarArtigo();
+        $this->MontarArtigo($logicLink);
         echo "</section>";
         $this->MontarAside();
         echo "</article>";

@@ -22,11 +22,11 @@ abstract class Conteudo{
         echo "<p>Video relacionado</p>\n";
         echo "<iframe src='{$this->getVideo()}'></iframe>\n";
         echo "</div>\n";
-        for($e=0; $e<2; $e++){
-            echo "<div id='propaganda'>\n";
+        for($e=0; $e<=1; $e++){
+            echo "<div id='propaganda'><a href='index.php?var={$this->getPagRelaciona()[$e][2]}'>\n";
             echo "<p class='titulo'>{$this->getPagRelaciona()[$e][0]}</p>\n";
             echo "<p>{$this->getPagRelaciona()[$e][1]}</p>\n";
-            echo "</div>\n";
+            echo "</a></div>\n";
         }
         echo "</aside>\n";
     }
