@@ -19,7 +19,7 @@ class Atualizacao extends Conteudo{
         echo "<p>{$this->getCampeao()}</p>";
         echo "<p>{$this->getHabilidade()}</p>";
         echo "<p>{$this->getMudanca()}</p>";
-        echo "<iframe id='youtube' src='{$this->getVideo()}'></iframe>";
+        echo "<iframe id='youtube' src='{$this->getVideo()}' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>";
     }
     public function MontarMaisHabilidade($habilidade){
         $this->setHabilidade($habilidade);

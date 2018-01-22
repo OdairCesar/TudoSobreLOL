@@ -30,7 +30,7 @@ nav#menu-principal ul{
 }
 nav#menu-principal li{
     background-color: rgba(0,0,0,.3);
-    padding: 20px 35px 20px 48px;
+    padding: 20px 42px 20px 43px;
     margin: 0px -2px;
     display: inline-block;
     color: white;
@@ -40,8 +40,8 @@ nav#menu-principal li{
     transition: all 1s; 
 }
 nav#menu-principal li:hover{
-    padding: 20px 49px 20px 35px;
-    background-color: rgba(0,0,0,.5);
+    padding: 20px 52px 20px 33px;
+    background-color: rgba(255,75,75,.6);
 }
 div#detalhes{
     background-color: white;
@@ -145,6 +145,16 @@ div#conteudo section{
     padding: 10px;
     float: left;
 }
+div#conteudo section ul{
+    list-style: disclosure-closed;
+    padding: 0px 10px 0px 10px;
+    margin: 0px;
+}
+div#conteudo section ul li{
+    padding: 5px 0px 0px 5px;
+    margin: 0px;
+    font-family: arial, sans-serif;
+}
 hgroup#enunciado{
     margin: 0px;
     padding: 0px;
@@ -160,7 +170,8 @@ article img#tamsection{
 iframe#youtube{
     margin: 30px 0px;
     width: 650px;
-    height: 380px;
+    height: 370px;
+    border: none;
 }
 div#conteudo aside{
     width: 400px;

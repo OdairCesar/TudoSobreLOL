@@ -17,7 +17,7 @@ class Noticias extends Conteudo {
             echo "<center><img id='tamsection' src='../{$this->getImagem()}'></center>";
         }
         echo "<p>{$this->getArtigo()}</p>";
-        echo "<iframe id='youtube' src='{$this->getVideo()}'></iframe>";
+        echo "<iframe id='youtube' src='{$this->getVideo()}' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>";
     }
     
     //Metodo construdor

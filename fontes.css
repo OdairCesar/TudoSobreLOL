@@ -3,112 +3,116 @@ div#detalhes p{
     margin: 0px;
     padding: 0px;
 }
-div#PrevNoticiaG h1{
+div#PrevNoticiaG p#titulo{
     color: white;
     text-shadow: 2px 2px 3px rgb(159,159,255);
-    font-size: 50pt;
+    font-size: 24pt;
     font-family: arial;
+    font-weight: bold;
     position: relative;
     text-align: center;
     padding: 0px;
     transition: all 2s;
 }
-div#PrevNoticiaG:hover h1{
+div#PrevNoticiaG:hover p#titulo{
     opacity: 0;
 }
-div#PrevNoticiaG h2{
-    font-family: arial;
-    font-size: 25pt;
-    font-weight: 800;
-    color: #6000c3;
-    text-shadow: -5px 0px 5px white;
+div#PrevNoticiaG p#subtitulo{
+    font-family: cursive;
+    font-size: 20pt;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0px 2px 10px #baba00;
     padding: 0px;
     margin: 0px;
     opacity: 0;
     transition: all 2s;
 }
-div#PrevNoticiaG:hover h2{
+div#PrevNoticiaG:hover p#subtitulo{
     opacity: 10;
 }
-div#PrevNoticiaM h1{
+div#PrevNoticiaM p#titulo{
     color: white;
     text-shadow: 2px 2px 3px rgb(159,159,255);
     font-size: 20pt;
     font-family: arial;
+    font-weight: bold;
     position: relative;
     text-align: center;
     padding: 0px;
     transition: all 2s;
 }
-div#PrevNoticiaM:hover h1{
+div#PrevNoticiaM:hover p#titulo{
     opacity: 0;
 }
-div#PrevNoticiaM h2{
-    font-family: arial;
-    font-size: 15pt;
-    font-weight: 700;
-    color: #6000c3;
-    text-shadow: 3px -3px 3px white;
+div#PrevNoticiaM p#subtitulo{
+    font-family: cursive;
+    font-size: 12pt;
+    font-weight: bold;
+    color: #c8c800;
+    text-shadow: 0px 2px 10px #323224;
     padding: 0px;
     margin: 0px;
     opacity: 0;
     transition: all 2s;
 }
-div#PrevNoticiaM:hover h2{
+div#PrevNoticiaM:hover p#subtitulo{
     opacity: 10;
 }
-div#PrevNoticiaMTwo h1{
+div#PrevNoticiaMTwo p#titulo{
     color: white;
     text-shadow: 2px 2px 3px rgb(159,159,255);
     font-size: 20pt;
     font-family: arial;
+    font-weight: bold;
     position: relative;
     text-align: center;
     padding: 0px;
     transition: all 2s;
 }
-div#PrevNoticiaMTwo:hover h1{
+div#PrevNoticiaMTwo:hover p#titulo{
     opacity: 0;
 }
-div#PrevNoticiaMTwo h2{
-    font-family: arial;
-    font-size: 15pt;
-    font-weight: 700;
-    color: #6000c3;
-    text-shadow: 3px -3px 3px white;
+div#PrevNoticiaMTwo p#subtitulo{
+    font-family: cursive;
+    font-size: 12pt;
+    font-weight: bold;
+    color: #c8c800;
+    text-shadow: 0px 2px 10px #323224;
     padding: 0px;
     margin: 0px;
     opacity: 0;
     transition: all 2s;
 }
-div#PrevNoticiaMTwo:hover h2{
+div#PrevNoticiaMTwo:hover p#subtitulo{
     opacity: 10;
 }
-div#PrevNoticiaP h1{
+div#PrevNoticiaP p#titulo{
     color: white;
     text-shadow: 2px 2px 3px rgb(159,159,255);
     font-size: 25pt;
     font-family: arial;
+    font-weight: bold;
     position: relative;
     text-align: center;
     padding: 0px;
     transition: all 2s;
 }
-div#PrevNoticiaP:hover h1{
+div#PrevNoticiaP:hover p#titulo{
     opacity: 0;
 }
-div#PrevNoticiaP h2{
-    font-family: arial;
-    font-size: 15pt;
-    font-weight: 700;
-    color: #6000c3;
-    text-shadow: 0px 0px 5px white;
+div#PrevNoticiaP p#subtitulo{
+    font-family: cursive;
+    font-size: 14pt;
+    font-weight: bold;
+    color: #c8c800;
+    text-shadow: 0px 2px 10px #323224;
     padding: 0px;
     margin: 0px;
     opacity: 0;
     transition: all 2s;
 }
-div#PrevNoticiaP:hover h2{
+div#PrevNoticiaP:hover p#subtitulo{
     opacity: 10;
 }
 hgroup#enunciado h1{
@@ -144,6 +148,9 @@ article p{
     margin-top-bottom: 5px; 
     margin-left-right: 0px;
     padding: 0px;
+}
+article a{
+    color: red;
 }
 div#video p{
     font-family: corbel;

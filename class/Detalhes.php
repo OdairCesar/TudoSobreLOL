@@ -19,8 +19,8 @@ class Detalhes{
         }else{
             echo "<a href='index.php?var=$link'><div id='PrevNoticia{$this->getTamanho()}' style='background: url({$this->getImagem()})'>";
         }
-        echo "<h1>{$this->getTitulo()}</h1>";
-        echo "<h2>{$this->getSubtitulo()}</h2>";
+        echo "<p id='titulo'>{$this->getTitulo()}</h1>";
+        echo "<p id='subtitulo'>{$this->getSubtitulo()}</h2>";
         echo "</div></a>";
     }
 

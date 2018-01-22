@@ -8,10 +8,12 @@ require_once 'Detalhes.php';
 require_once 'Atualizacao.php';
 require_once 'Noticias.php';
 require_once 'Tier.php';
+require_once 'Zoeras.php';
 require_once 'QueryAtualizacao.php';
 require_once 'QueryInicio.php';
 require_once 'QueryNoticia.php';
 require_once 'QueryTier.php';
+require_once 'QueryZoeras.php';
 require_once 'MenuPagina.php';
 class Pagina {
     //1.Atributos
@@ -52,6 +54,10 @@ class Pagina {
             $this->setObjConteudo(new Tier(true, $this->titulo, $this->subtitulo, $this->autoria, $this->data, $this->imagem, $this->video, $this->bufs, $this->nerfs, $this->tabela, $this->artigo, $this->pagRelaciona));
         }
     }
+    private function ObjZoeras($escolha){
+        $this->PassarValores($escolha);
+        $this->setObjConteudo(new Zoeras(false, $this->titulo, $this->subtitulo, $this->data, $this->autoria, $this->imagem, $this->video, $this->artigo, $this->pagRelaciona)); 
+    }
     private function DefinirAside($escolha){
         //Irá definir o que das pesquisas passará para o pagRelaciona (Artigo relacionados ao artigo
         switch ($escolha){
@@ -91,13 +97,13 @@ class Pagina {
             $this->nerfs = $this->getObjPesquisa()->resposta[$escolha][8];
             $this->tabela = $this->getObjPesquisa()->resposta[$escolha][9];
             $this->artigo = $this->getObjPesquisa()->resposta[$escolha][10];
-        } else if ($this->tipo == "Noticia") {
+        } elseif (($this->tipo == "Noticia") || ($this->tipo = "Zoera")) {
             $this->artigo = $this->getObjPesquisa()->resposta[$escolha][7]; 
-        } else if ($this->tipo == "Atualizacao") {
+        } elseif ($this->tipo == "Atualizacao") {
             $this->campeao = $this->getObjPesquisa()->resposta[$escolha][7];
             $this->habilidade = $this->getObjPesquisa()->resposta[$escolha][8];
             $this->mudanca = $this->getObjPesquisa()->resposta[$escolha][9]; 
-    }
+        }
     }
     private function ObjDetalhes($logicOrdPadrao, $logicLink, $ordem1, $ordem2, $ordem3, $ordem4){// se passar o logico falço, podera colocar qualquer numero nas variaveis ordem
         $detalhes = new Detalhes;
@@ -124,16 +130,15 @@ class Pagina {
         $menu = new MenuPagina;
 
         if($queryPesq == "Atualizacao"){
-            $menu->PassarLinks("../index.php", "../noticia/index.php", "../stream/index.php", "index.php", "../tier/index.php", "../contato/index.php");
+            $menu->PassarLinks("../", "../noticia/", "../zoeras/", "index.php", "../tier/", "../contato/");
             $menu->ConstrutorManual();
             $this->objPesquisa = new QueryAtualizacao();
             $this->objPesquisa->QueryLimit(4);
             $this->ObjDetalhes(true, true, 1, 2, 3, 0);
             $this->DefinirAside($urlEscolha);
             $this->ObjAtualizacao($urlEscolha);
-        }
-        elseif ($queryPesq == "Inicio") {
-            $menu->PassarLinks("index.php", "noticia/index.php", "stream/index.php", "atualizacao/index.php", "tier/index.php", "contato/index.php");
+        } elseif ($queryPesq == "Inicio") {
+            $menu->PassarLinks("index.php", "noticia/", "zoeras/", "atualizacao/", "tier/", "contato/");
             $menu->ConstrutorManual();
             $this->objPesquisa = new QueryInicio();
             $this->objPesquisa->QueryNotUm("titulo LIKE '%Likkrit%'");
@@ -143,24 +148,30 @@ class Pagina {
             $this->objDetalhes(true, false, 2, 1, 0, 3);
             $this->DefinirAside($urlEscolha);
             $this->ObjInicio($urlEscolha);
-        }
-        elseif ($queryPesq == "Noticia"){
-            $menu->PassarLinks("../index.php", "index.php", "../stream/index.php", "../atualizacao/index.php", "../tier/index.php", "../contato/index.php");
+        } elseif ($queryPesq == "Noticia"){
+            $menu->PassarLinks("../", "index.php", "../zoeras/", "../atualizacao/", "../tier/", "../contato/");
             $menu->ConstrutorManual();
             $this->objPesquisa = new QueryNoticia();
             $this->objPesquisa->QueryLimit(4);
             $this->ObjDetalhes(true, true, 3, 1, 2, 0);
             $this->DefinirAside($urlEscolha);
             $this->ObjNoticias($urlEscolha);
-        }
-        elseif ($queryPesq == "Tier") {
-            $menu->PassarLinks("../index.php", "../noticia/index.php", "../stream/index.php", "../atualizacao/index.php", "index.php", "../contato/index.php");
+        } elseif ($queryPesq == "Tier") {
+            $menu->PassarLinks("../", "../noticia/", "../zoeras/", "../atualizacao/", "index.php", "../contato/");
             $menu->ConstrutorManual();
             $this->objPesquisa = new QueryTier();
             $this->objPesquisa->QueryLimit(4);
             $this->ObjDetalhes(true, true, 1, 3, 2, 0);
             $this->DefinirAside($urlEscolha);
             $this->ObjTier($urlEscolha);
+        } elseif ($queryPesq == "Zoera"){
+            $menu->PassarLinks("../", "../noticia/", "index.php", "../atualizacao/", "../tier/", "../contato/");
+            $menu->ConstrutorManual();
+            $this->objPesquisa = new QueryZoeras();
+            $this->objPesquisa->QueryLimit(4);
+            $this->ObjDetalhes(false, true, 0, 0, 0, 0);
+            $this->DefinirAside($urlEscolha);
+            $this->ObjZoeras($urlEscolha);
         }
     }
 

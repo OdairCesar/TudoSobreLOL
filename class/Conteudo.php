@@ -20,7 +20,7 @@ abstract class Conteudo{
         echo "<aside>\n";
         echo "<div id='video'>\n";
         echo "<p>Video relacionado</p>\n";
-        echo "<iframe src='{$this->getVideo()}'></iframe>\n";
+        echo "<iframe src='{$this->getVideo()}' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>\n";
         echo "</div>\n";
         for($e=0; $e<=1; $e++){
             echo "<div id='propaganda'><a href='index.php?var={$this->getPagRelaciona()[$e][2]}'>\n";

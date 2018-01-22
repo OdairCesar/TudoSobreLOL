@@ -21,7 +21,7 @@ class MenuPagina{
         echo "<nav id='menu-principal'><ul>
                 <a href='{$this->getHome()}'><li style='border:none;'>Home</li></a>
                 <a href='{$this->getNoticia()}'><li>Noticias</li></a>
-                <a href='{$this->getStreams()}'><li>Streams</li></a>
+                <a href='{$this->getStreams()}'><li>Zueras</li></a>
                 <a href='{$this->getAtualizacao()}'><li>Atualização</li></a>
                 <a href='{$this->getTier()}'><li>Tier List</li></a>
                 <a href='{$this->getContato()}'><li>Fale Conosco</li></a>

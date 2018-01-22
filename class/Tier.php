@@ -19,7 +19,7 @@ class Tier extends Conteudo{
             echo "<center><img src='../{$this->getTabela()}'></center>\n";
         }
         echo "<p>{$this->getEspecificacoes()}</p>\n";
-        echo "<iframe id='youtube' src='{$this->getVideo()}'></iframe>\n";
+        echo "<iframe id='youtube' src='{$this->getVideo()}' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>\n";
     }
     
     //Metodo Contrudor
