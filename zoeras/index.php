@@ -6,6 +6,13 @@
         <link rel="stylesheet" type="text/css" href="../estilo.css">
         <link rel="stylesheet" type="text/css" href="../fontes.css">
         <link rel="shortcut icon" href="../imagens/logo-lol.jpg">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-6479735546054520",
+                enable_page_level_ads: true
+            });
+        </script>
         <title>Veja por os streamers e jogadores estão sendo zuados</title>
         <?php
             include_once '../class/Pagina.php';

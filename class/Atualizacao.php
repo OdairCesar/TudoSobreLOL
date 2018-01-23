@@ -36,6 +36,7 @@ class Atualizacao extends Conteudo{
         $this->setCampeao($campeao);
         $this->setHabilidade($habilidade);
         $this->setMudanca($mudanca);
+        $this->PropagandaAdSense();
         echo "<div id='conteudo'>";
         echo "<article>";
         echo "<section>";

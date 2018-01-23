@@ -24,6 +24,7 @@ class Noticias extends Conteudo {
     public function __construct($logicLink, $titulo, $subtitulo, $autoria, $data, $imagem, $video, $artigo, $pagRelaciona) {
         parent::__construct($titulo, $subtitulo, $autoria, $data, $imagem, $video, $pagRelaciona);
         $this->setArtigo($artigo);
+        $this->PropagandaAdSense();
         echo "<div id='conteudo'>";
         echo "<section>";
         echo "<article>";

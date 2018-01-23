@@ -29,6 +29,7 @@ class Tier extends Conteudo{
         $this->setNerfs($nerfs);
         $this->setEspecificacoes($especificacoes);
         $this->setTabela($tabela);
+        $this->PropagandaAdSense();
         echo "<div id='conteudo'>\n";
         echo "<section>";
         echo "<article>\n";

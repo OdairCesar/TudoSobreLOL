@@ -128,10 +128,17 @@ div#PrevNoticiaP:hover{
     height: 250px;
     box-shadow: 5px 5px 3px #909090;
 }
+div#propa{
+    width: 800px;
+    height: 140px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 40px auto;
+}
 div#conteudo{
     background-color: white;
     width: 1100px;
-    margin: 100px auto 0px auto;
+    margin: 40px auto 0px auto;
     height: 2000px;
     border: 10px outset #2e8bff;
     transition: all .7s;
@@ -183,7 +190,7 @@ div#conteudo aside{
 div#video{
     background-color: #eeeeee;
     width: 380px;
-    height: 280px;
+    height: 300px;
     padding: 10px;
     margin: 0px 0px 120px 0px;
     border-radius: 0px 0px 0px 40px;

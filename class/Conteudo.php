@@ -4,7 +4,7 @@
  *
  * @author Odair
  */
-abstract class Conteudo{
+class Conteudo{
     //Atributos
     private $titulo, $subtitulo, $autoria, $data, $imagem, $video, $pagRelaciona; 
     
@@ -19,8 +19,16 @@ abstract class Conteudo{
     protected function MontarAside(){
         echo "<aside>\n";
         echo "<div id='video'>\n";
-        echo "<p>Video relacionado</p>\n";
-        echo "<iframe src='{$this->getVideo()}' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>\n";
+        echo "<script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>\n
+            <!-- Propaganda lateral -->\n
+            <ins class=\"adsbygoogle\"
+                style=\"display:inline-block;width:336px;height:280px\"
+                data-ad-client=\"ca-pub-6479735546054520\"
+                data-ad-slot=\"1126000179\">
+            </ins>\n
+        <script>\n
+            (adsbygoogle = window.adsbygoogle || []).push({});\n
+        </script>\n";
         echo "</div>\n";
         for($e=0; $e<=1; $e++){
             echo "<div id='propaganda'><a href='index.php?var={$this->getPagRelaciona()[$e][2]}'>\n";
@@ -29,6 +37,20 @@ abstract class Conteudo{
             echo "</a></div>\n";
         }
         echo "</aside>\n";
+    }
+    public function PropagandaAdSense(){  
+        echo "<div id='propa'>\n";
+        echo "<script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>\n
+        <ins class=\"adsbygoogle\"
+            style=\"display:block\"
+            data-ad-format=\"fluid\"
+            data-ad-layout-key=\"-gw-1s+cd-5x-uk\"
+            data-ad-client=\"ca-pub-6479735546054520\"
+            data-ad-slot=\"8183552481\"></ins>
+        <script>\n
+            (adsbygoogle = window.adsbygoogle || []).push({});\n
+        </script>\n";
+        echo "</div>\n";
     }
     
     //Metodo Contrudor

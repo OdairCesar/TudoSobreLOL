@@ -9,6 +9,7 @@ require_once 'Atualizacao.php';
 require_once 'Noticias.php';
 require_once 'Tier.php';
 require_once 'Zoeras.php';
+require_once 'Conteudo.php';
 require_once 'QueryAtualizacao.php';
 require_once 'QueryInicio.php';
 require_once 'QueryNoticia.php';
