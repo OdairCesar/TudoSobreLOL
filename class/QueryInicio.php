@@ -24,6 +24,13 @@ class QueryInicio extends SistemaQuery{
             $this->resposta[] = array($res->titulo, $res->subtitulo, $res->lancamento, $res->escritor, $res->argencia, $res->imagem, $res->video, $res->artigo);
         }
     }
+    public function QueryZoeras($where){
+        $this->setQuery("SELECT * FROM zoeras WHERE $where");
+        $select = $this->conexao->query($this->getQuery());
+        while($res = $select->fetch(PDO::FETCH_OBJ)){
+            $this->resposta[] = array($res->titulo, $res->subtitulo, $res->lancamento, $res->escritor, $res->argencia, $res->imagem, $res->video, $res->artigo);
+        }
+    }
     public function QueryAtualizacao($where){
         $this->setQuery("SELECT * FROM atualizacao WHERE $where");
         $select = $this->conexao->query($this->getQuery());

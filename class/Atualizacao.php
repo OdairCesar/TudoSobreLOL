@@ -16,6 +16,16 @@ class Atualizacao extends Conteudo{
         } else {
             echo "<center><img src='../{$this->getImagem()}'></center>";
         }
+        echo "<script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>\n
+            <!-- Propaganda lateral -->\n
+            <ins class=\"adsbygoogle\"
+                style=\"display:inline-block;width:336px;height:280px\"
+                data-ad-client=\"ca-pub-6479735546054520\"
+                data-ad-slot=\"1126000179\">
+            </ins>\n
+        <script>\n
+            (adsbygoogle = window.adsbygoogle || []).push({});\n
+        </script>\n";
         echo "<p>{$this->getCampeao()}</p>";
         echo "<p>{$this->getHabilidade()}</p>";
         echo "<p>{$this->getMudanca()}</p>";
@@ -38,13 +48,13 @@ class Atualizacao extends Conteudo{
         $this->setMudanca($mudanca);
         $this->PropagandaAdSense();
         echo "<div id='conteudo'>";
-        echo "<article>";
         echo "<section>";
+        echo "<article>";
         $this->MontarHgroup();
         $this->MontarArtigo($logicLink);
+        echo "</article>";
         echo "</section>";
         $this->MontarAside();
-        echo "</article>";
         echo "</div>";
     }
     //Metodos Getter e Setter

@@ -18,6 +18,16 @@ class Tier extends Conteudo{
         }else{
             echo "<center><img src='../{$this->getTabela()}'></center>\n";
         }
+        echo "<script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>\n
+            <!-- Propaganda lateral -->\n
+            <ins class=\"adsbygoogle\"
+                style=\"display:inline-block;width:336px;height:280px\"
+                data-ad-client=\"ca-pub-6479735546054520\"
+                data-ad-slot=\"1126000179\">
+            </ins>\n
+        <script>\n
+            (adsbygoogle = window.adsbygoogle || []).push({});\n
+        </script>\n";
         echo "<p>{$this->getEspecificacoes()}</p>\n";
         echo "<iframe id='youtube' src='{$this->getVideo()}' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>\n";
     }

@@ -34,7 +34,7 @@ div#PrevNoticiaG:hover p#subtitulo{
 div#PrevNoticiaM p#titulo{
     color: white;
     text-shadow: 2px 2px 3px rgb(159,159,255);
-    font-size: 20pt;
+    font-size: 18pt;
     font-family: arial;
     font-weight: bold;
     position: relative;
@@ -62,7 +62,7 @@ div#PrevNoticiaM:hover p#subtitulo{
 div#PrevNoticiaMTwo p#titulo{
     color: white;
     text-shadow: 2px 2px 3px rgb(159,159,255);
-    font-size: 20pt;
+    font-size: 18pt;
     font-family: arial;
     font-weight: bold;
     position: relative;
@@ -90,7 +90,7 @@ div#PrevNoticiaMTwo:hover p#subtitulo{
 div#PrevNoticiaP p#titulo{
     color: white;
     text-shadow: 2px 2px 3px rgb(159,159,255);
-    font-size: 25pt;
+    font-size: 23pt;
     font-family: arial;
     font-weight: bold;
     position: relative;
@@ -121,7 +121,7 @@ hgroup#enunciado h1{
     font-size: 30pt;
     text-align: left;
     margin: 0px;
-    padding: 0px; 
+    padding: 0px;
 }
 hgroup#enunciado h2{
     color: rgb(185,185,185);
@@ -145,7 +145,7 @@ article p{
     font-size: 15pt;
     font-weight: 550;
     text-align: justify;
-    margin-top-bottom: 5px; 
+    margin-top-bottom: 5px;
     margin-left-right: 0px;
     padding: 0px;
 }
