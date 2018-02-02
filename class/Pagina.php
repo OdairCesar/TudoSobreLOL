@@ -84,7 +84,7 @@ class Pagina {
                 break;
         }
     }
-    private function PassarValores($escolha){
+    private function PassarValores($escolha, $tipo){
         $this->titulo = $this->getObjPesquisa()->resposta[$escolha][0];
         $this->subtitulo = $this->getObjPesquisa()->resposta[$escolha][1];
         $this->data = $this->getObjPesquisa()->resposta[$escolha][2];
@@ -93,14 +93,14 @@ class Pagina {
         $this->imagem = $this->getObjPesquisa()->resposta[$escolha][5];
         $this->video = $this->getObjPesquisa()->resposta[$escolha][6];
         $this->pagRelaciona = $this->aside;
-        if ($this->tipo == "Tier"){
+        if ($tipo == "Tier"){
             $this->bufs = $this->getObjPesquisa()->resposta[$escolha][7];
             $this->nerfs = $this->getObjPesquisa()->resposta[$escolha][8];
             $this->tabela = $this->getObjPesquisa()->resposta[$escolha][9];
             $this->artigo = $this->getObjPesquisa()->resposta[$escolha][10];
-        } elseif (($this->tipo == "Noticia") || ($this->tipo = "Zoera")) {
+        } elseif (($tipo == "Noticia") || ($tipo = "Zoera")) {
             $this->artigo = $this->getObjPesquisa()->resposta[$escolha][7];
-        } elseif ($this->tipo == "Atualizacao") {
+        } elseif ($tipo == "Atualizacao") {
             $this->campeao = $this->getObjPesquisa()->resposta[$escolha][7];
             $this->habilidade = $this->getObjPesquisa()->resposta[$escolha][8];
             $this->mudanca = $this->getObjPesquisa()->resposta[$escolha][9];
