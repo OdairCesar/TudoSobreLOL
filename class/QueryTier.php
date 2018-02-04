@@ -34,10 +34,10 @@ class QueryTier extends SistemaQuery{
     }
 
     //Metodos Especiais
-    public function getReposta() {
+    public function getResposta() {
         return $this->reposta;
     }
-    public function setReposta($reposta) {
+    public function setResposta($resposta) {
         $this->reposta = $reposta;
     }
 }

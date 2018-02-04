@@ -7,7 +7,7 @@
 require_once 'Conteudo.php';
 class Atualizacao extends Conteudo{
     //Atributos
-    private $campeao, $habilidade, $mudanca;
+    private $camp, $habilid, $muda;
     
     //Metodos
     protected function MontarArtigo($logicLink){
@@ -26,26 +26,26 @@ class Atualizacao extends Conteudo{
         <script>\n
             (adsbygoogle = window.adsbygoogle || []).push({});\n
         </script>\n";
-        echo "<p>{$this->getCampeao()}</p>";
-        echo "<p>{$this->getHabilidade()}</p>";
-        echo "<p>{$this->getMudanca()}</p>";
+        echo "<p>{$this->getCamp()}</p>";
+        echo "<p>{$this->getHabilid()}</p>";
+        echo "<p>{$this->getMuda()}</p>";
         echo "<iframe id='youtube' src='{$this->getVideo()}' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>";
     }
     public function MontarMaisHabilidade($habilidade){
-        $this->setHabilidade($habilidade);
-        echo "<p>{$this->getHabilidade()}</p>";
+        $this->setHabilid($habilid);
+        echo "<p>{$this->getHabilid()}</p>";
     }
     public function MontarMaisMudanca($mudanca){
-        $this->setMudanca($mudanca);
-        echo "<p>{$this->getMudanca()}</p>";
+        $this->setMuda($mudanca);
+        echo "<p>{$this->getMuda()}</p>";
     }
 
     //Metodo Construdor
-    public function __construct($logicLink, $titulo, $subtitulo, $autoria, $data, $imagem, $video, $campeao, $habilidade, $mudanca, $pagRelaciona) {
+    public function __construct($logicLink, $logicAside,$titulo, $subtitulo, $autoria, $data, $imagem, $video, $campeao, $habilidade, $mudanca, $pagRelaciona) {
         parent::__construct($titulo, $subtitulo, $autoria, $data, $imagem, $video, $pagRelaciona);
-        $this->setCampeao($campeao);
-        $this->setHabilidade($habilidade);
-        $this->setMudanca($mudanca);
+        $this->setCamp($campeao);
+        $this->setHabilid($habilidade);
+        $this->setMuda($mudanca);
         $this->PropagandaAdSense();
         echo "<div id='conteudo'>";
         echo "<section>";
@@ -54,26 +54,28 @@ class Atualizacao extends Conteudo{
         $this->MontarArtigo($logicLink);
         echo "</article>";
         echo "</section>";
-        $this->MontarAside();
+        if ($logicAside){
+            $this->MontarAside();
+        }
         echo "</div>";
     }
     //Metodos Getter e Setter
-    public function getCampeao() {
-        return $this->campeao;
+    public function getCamp() {
+        return $this->camp;
     }
-    public function getHabilidade() {
-        return $this->habilidade;
+    public function getHabilid() {
+        return $this->habilid;
     }
-    public function getMudanca() {
-        return $this->mudanca;
+    public function getMuda() {
+        return $this->muda;
     }
-    protected function setCampeao($campeao) {
-        $this->campeao = $campeao;
+    protected function setCamp($camp) {
+        $this->camp = $camp;
     }
-    protected function setHabilidade($habilidade) {
-        $this->habilidade = $habilidade;
+    protected function setHabilid($habilid) {
+        $this->habilid = $habilid;
     }
-    protected function setMudanca($mudanca) {
-        $this->mudanca = $mudanca;
+    protected function setMuda($muda) {
+        $this->muda = $muda;
     }
 }

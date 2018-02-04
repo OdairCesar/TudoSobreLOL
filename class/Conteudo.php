@@ -23,7 +23,7 @@ abstract class Conteudo{
         echo "<iframe src='{$this->getVideo()}' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>";
         echo "</div>\n";
         for($e=0; $e<=1; $e++){
-            echo "<div id='propaganda'><a href='index.php?var={$this->getPagRelaciona()[$e][2]}'>\n";
+            echo "<div id='propaganda'><a href='index.php?var={$this->getPagRelaciona()[$e][2]}#propa'>\n";
             echo "<p class='titulo'>{$this->getPagRelaciona()[$e][0]}</p>\n";
             echo "<p>{$this->getPagRelaciona()[$e][1]}</p>\n";
             echo "</a></div>\n";

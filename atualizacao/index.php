@@ -15,13 +15,16 @@
             });
         </script>
         <?php
-            include_once '../class/Pagina.php';
+            include_once '../class/PaginaAtualizacao.php';
             $noturl = isset($_GET['var'])? $_GET['var'] : 0;
+            $pagina = new PaginaAtualizacao(false, "" ,$noturl);
         ?>
     </head>
     <body>
         <?php
-            $pagina = new Pagina("Atualizacao", $noturl);
+            $pagina->MontarMenu();
+            $pagina->MontarDetalhes(false, 1, 2, 3, 0);
+            $pagina->MontarConteudo(false, true);
         ?>
     </body>
 </html>

@@ -15,15 +15,16 @@
             });
         </script>
         <?php
-            include_once '../class/Pagina.php';
+            include_once '../class/PaginaTier.php';
             $noturl = isset($_GET['var'])? $_GET['var'] : 0;
         ?>
     </head>
     <body>
         <?php
-            $pagina = new Pagina("Tier", $noturl);
+            $pagina = new PaginaTier(false, "" ,$noturl);
+            $pagina->MontarMenu();
+            $pagina->MontarDetalhes(false, 1, 2, 3, 0);
+            $pagina->MontarConteudo(false, true);
         ?>
     </body>
 </html>
-
-

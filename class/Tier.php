@@ -33,8 +33,8 @@ class Tier extends Conteudo{
     }
     
     //Metodo Contrudor
-    public function __construct($logicLink, $titulo, $subtitulo, $autoria, $data, $imagem, $video, $bufs, $nerfs, $tabela, $especificacoes, $pagRelaciona) {
-        parent::__construct($titulo, $subtitulo, $autoria, $data, $imagem, $video, $pagRelaciona);
+    public function __construct($logicLink, $logicAside, $titulo, $subtitulo, $autoria, $data, $imagem, $video, $bufs, $nerfs, $tabela, $especificacoes, $aside) {
+        parent::__construct($titulo, $subtitulo, $autoria, $data, $imagem, $video, $aside);
         $this->setBufs($bufs);
         $this->setNerfs($nerfs);
         $this->setEspecificacoes($especificacoes);
@@ -47,7 +47,9 @@ class Tier extends Conteudo{
         $this->MontarArtigo($logicLink);
         echo "</article>\n";
         echo "</section>";
-        $this->MontarAside();
+        if ($logicAside){
+            $this->MontarAside();
+        }
         echo "</div>\n";
     }
     

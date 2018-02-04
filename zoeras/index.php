@@ -15,13 +15,16 @@
         </script>
         <title>Veja por os streamers e jogadores estão sendo zuados</title>
         <?php
-            include_once '../class/Pagina.php';
+            include_once '../class/PaginaZoera.php';
             $noturl = isset($_GET['var'])? $_GET['var'] : 0;
         ?>
     </head>
     <body>
         <?php
-            $pagina = new Pagina("Zoera", $noturl);
+            $pagina = new PaginaZoera(false, "" ,$noturl);
+            $pagina->MontarMenu();
+            $pagina->MontarDetalhes(false, 0, 2, 3, 1);
+            $pagina->MontarConteudo(false, true);
         ?>
     </body>
 </html>
