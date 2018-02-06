@@ -142,9 +142,9 @@ class Pagina {
             $menu->PassarLinks("index.php", "noticia/", "zoeras/", "atualizacao/", "tier/", "contato/");
             $menu->ConstrutorManual();
             $this->objPesquisa = new QueryInicio();
-            $this->objPesquisa->QueryNotUm("titulo LIKE '%Team%One%Virada%'");
+            $this->objPesquisa->QueryNotUm("titulo LIKE '%rakin%deixa%titularidade%CNB%'");
             $this->objPesquisa->QueryZoeras("subtitulo LIKE '%1600%'");
-            $this->objPesquisa->QueryNotDois("titulo LIKE '%Red%vence%CNB%'");
+            $this->objPesquisa->QueryNotDois("titulo LIKE '%Robo%mid%CNB%'");
             $this->objPesquisa->QueryTier("versao LIKE '%8.2%'");
             $this->objDetalhes(true, false, 2, 1, 0, 3);
             $this->DefinirAside($urlEscolha);
@@ -154,7 +154,7 @@ class Pagina {
             $menu->ConstrutorManual();
             $this->objPesquisa = new QueryNoticia();
             $this->objPesquisa->QueryLimit(4);
-            $this->ObjDetalhes(true, true, 0, 2, 1, 3);
+            $this->ObjDetalhes(true, true, 2, 3, 0, 1);
             $this->DefinirAside($urlEscolha);
             $this->ObjNoticias($urlEscolha);
         } elseif ($queryPesq == "Tier") {
@@ -170,7 +170,7 @@ class Pagina {
             $menu->ConstrutorManual();
             $this->objPesquisa = new QueryZoeras();
             $this->objPesquisa->QueryLimit(4);
-            $this->ObjDetalhes(true, true, 0, 2, 3, 1);
+            $this->ObjDetalhes(true, true, 2, 1, 3, 0);
             $this->DefinirAside($urlEscolha);
             $this->ObjZoeras($urlEscolha);
         }
