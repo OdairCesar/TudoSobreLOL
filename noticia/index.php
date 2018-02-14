@@ -5,7 +5,9 @@
         <meta name="description" content="Ultimas noticias envolvendo o pro-players, streamers e times do League Of Legends. Contratações, brigas, resultados da rodada do CBLOL e informações de times competitivos">
         <title>Saiba o que acontece no cenario do League Of Legends Brasil</title>
         <link rel="stylesheet" type="text/css" href="../estilo.css">
+        <link rel="stylesheet" type="text/css" href="../estilo-medio.css">
         <link rel="stylesheet" type="text/css" href="../fontes.css">
+        <link rel="stylesheet" type="text/css" href="../fontes-medio.css">
         <link rel="shortcut icon" href="../imagens/logo-lol.jpg">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <script>

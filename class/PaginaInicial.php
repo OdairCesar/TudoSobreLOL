@@ -1,12 +1,12 @@
 <?php
 
-require_once 'Pagina.php'
+require_once 'Pagina.php';
 
 class PaginaInicial extends Pagina{
-	private objConteudo, objMenu, objDetalhes, objFooter;
+	private $objConteudo, $objMenu, $objDetalhes, $objFooter;
 
 	public function PassarValores(){
-
+            
 	}
 	public function MontarDetalhes(){
 
