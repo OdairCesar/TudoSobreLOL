@@ -15,18 +15,18 @@ class PaginaAtualizacao extends Pagina{
         if ($this->fazerDetalhes){
             if ($padraoOrdem){
                 echo "<div id='detalhes'>";
-                $this->objDetalhes->MontarDiv($this->getObjPesquisa()->resposta[0][0], $this->getObjPesquisa()->resposta[0][1], $this->getObjPesquisa()->resposta[0][5], "P", true, 0);
-                $this->objDetalhes->MontarDiv($this->getObjPesquisa()->resposta[1][0], $this->getObjPesquisa()->resposta[1][1], $this->getObjPesquisa()->resposta[1][5], "M", true, 1);
-                $this->objDetalhes->MontarDiv($this->getObjPesquisa()->resposta[2][0], $this->getObjPesquisa()->resposta[2][1], $this->getObjPesquisa()->resposta[2][5], "MTwo", true, 2);
-                $this->objDetalhes->MontarDiv($this->getObjPesquisa()->resposta[3][0], $this->getObjPesquisa()->resposta[3][1], $this->getObjPesquisa()->resposta[3][5], "G", true, 3);
+                $this->objDetalhes->MontarDiv($this->getObjPesquisa()->getResultado()[0][0], $this->getObjPesquisa()->getResultado()[0][1], $this->getObjPesquisa()->getResultado()[0][5], "P", true, 0);
+                $this->objDetalhes->MontarDiv($this->getObjPesquisa()->getResultado()[1][0], $this->getObjPesquisa()->getResultado()[1][1], $this->getObjPesquisa()->getResultado()[1][5], "M", true, 1);
+                $this->objDetalhes->MontarDiv($this->getObjPesquisa()->getResultado()[2][0], $this->getObjPesquisa()->getResultado()[2][1], $this->getObjPesquisa()->getResultado()[2][5], "MTwo", true, 2);
+                $this->objDetalhes->MontarDiv($this->getObjPesquisa()->getResultado()[3][0], $this->getObjPesquisa()->getResultado()[3][1], $this->getObjPesquisa()->getResultado()[3][5], "G", true, 3);
                 echo "</div>";
             }
             else{
                 echo "<div id='detalhes'>";
-                $this->objDetalhes->MontarDiv($this->getObjPesquisa()->resposta[$div1][0], $this->getObjPesquisa()->resposta[$div1][1], $this->getObjPesquisa()->resposta[$div1][5], "P", true, $div1);
-                $this->objDetalhes->MontarDiv($this->getObjPesquisa()->resposta[$div2][0], $this->getObjPesquisa()->resposta[$div2][1], $this->getObjPesquisa()->resposta[$div2][5], "M", true, $div2);
-                $this->objDetalhes->MontarDiv($this->getObjPesquisa()->resposta[$div3][0], $this->getObjPesquisa()->resposta[$div3][1], $this->getObjPesquisa()->resposta[$div3][5], "MTwo", true, $div3);
-                $this->objDetalhes->MontarDiv($this->getObjPesquisa()->resposta[$div4][0], $this->getObjPesquisa()->resposta[$div4][1], $this->getObjPesquisa()->resposta[$div4][5], "G", true, $div4);
+                $this->objDetalhes->MontarDiv($this->getObjPesquisa()->getResultado()[$div1][0], $this->getObjPesquisa()->getResultado()[$div1][1], $this->getObjPesquisa()->getResultado()[$div1][5], "P", true, $div1);
+                $this->objDetalhes->MontarDiv($this->getObjPesquisa()->getResultado()[$div2][0], $this->getObjPesquisa()->getResultado()[$div2][1], $this->getObjPesquisa()->getResultado()[$div2][5], "M", true, $div2);
+                $this->objDetalhes->MontarDiv($this->getObjPesquisa()->getResultado()[$div3][0], $this->getObjPesquisa()->getResultado()[$div3][1], $this->getObjPesquisa()->getResultado()[$div3][5], "MTwo", true, $div3);
+                $this->objDetalhes->MontarDiv($this->getObjPesquisa()->getResultado()[$div4][0], $this->getObjPesquisa()->getResultado()[$div4][1], $this->getObjPesquisa()->getResultado()[$div4][5], "G", true, $div4);
                 echo "</div>";
             }
         }
@@ -43,7 +43,7 @@ class PaginaAtualizacao extends Pagina{
         /*
          * Nesde será feito o menu da pagina;
          */
-        $this->objMenu->PassarLinks("../", "index.php", "../zoeras/", "../atualizacao/", "../tier/", "../contato/");
+        $this->objMenu->PassarLinks("../", "../noticia/", "../zoeras/", "index.php", "../tier/", "../contato/");
         $this->objMenu->ConstrutorManual();
     }
     public function MontarFooter(){
@@ -69,9 +69,9 @@ class PaginaAtualizacao extends Pagina{
         }
         $this->PassarValores("Atualizacao");
         if ($this->getCampeao() || NULL && $this->getHabilidade() == NULL || $this->getMudanca() == NULL){
-            $this->setCampeao($this->getObjPesquisa()->resposta[$this->getEscolha()][7]);
-            $this->setHabilidade($this->getObjPesquisa()->resposta[$this->getEscolha()][8]);
-            $this->setMudanca($this->getObjPesquisa()->resposta[$this->getEscolha()][9]);
+            $this->setCampeao($this->getObjPesquisa()->getResultado()[$this->getEscolha()][7]);
+            $this->setHabilidade($this->getObjPesquisa()->getResultado()[$this->getEscolha()][8]);
+            $this->setMudanca($this->getObjPesquisa()->getResultado()[$this->getEscolha()][9]);
         }
     }
     public function getObjConteudo(){

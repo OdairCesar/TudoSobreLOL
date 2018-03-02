@@ -2,8 +2,10 @@
     <head>
         <meta charset="utf8">
         <title>Deixe sua opnição ou critica para melhor</title>
-        <link rel="stylesheet" type="text/css" href="../estilo.css">
-        <link rel="stylesheet" type="text/css" href="../fontes.css">
+        <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+        <link rel="stylesheet" type="text/css" href="../css/estilo-medio.css">
+        <link rel="stylesheet" type="text/css" href="../css/fontes.css">
+        <link rel="stylesheet" type="text/css" href="../css/fontes-medio.css">
         <link rel="shortcut icon" href="../imagens/logo-lol.jpg">
     </head>
     <body>
@@ -19,17 +21,17 @@
 
                 <label for='Isobrenome'>Sobrenome:</label>
                 <input id='Isobrenome' type='text' name='sobrenome' maxlength="20" placeholder='Ultimo Nome'></p>
-                
+
                 <p><label for='Iemail'>E-mail:</label>
                 <input id='Iemail' type='email' name='email' maxlength="50" placeholder='Seu e-mail para contato'></p>
-                
+
                 <p><label for='Iidade'>Idade:</label>
                 <input id='Iidade' type="number" name="idade" maxlength="2" placeholder="Idade Atual"></p>
 
                 <fieldset id='Sex'><legend>Sexo</legend>
                     <input id='Imasc' type='radio' name='sexo' value='Masculino'>
                     <label for='Imasc'>Masculino</label>
-                
+
                     <input id='Ifem' type='radio' name='sexo' value='Feminimo'>
                     <label for='Ifem'>Feminimo</label>
                 </fieldset>
@@ -41,12 +43,10 @@
                     <textarea id='Iopiniao' name='opiniao' cols='75' rows='10'></textarea>
                 </fieldset>
             </fieldset>
-            
+
             <label for="Ienviar">Enviar</label>
             <input id="Ienviar" type="submit" name="enviar">
         </form>
     </div>
     </body>
 </html>
-
-

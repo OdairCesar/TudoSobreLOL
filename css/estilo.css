@@ -1,28 +1,26 @@
 /*Divs e Navs*/
-@media only screen and (max-width: 1099px){
 body{
-    background-image: url(imagens/papel-fundo.jpg);
+    background-image: url(../imagens/papel-fundo.jpg);
     background-attachment: fixed;
     margin: 0px;
     padding: 0px;
 }
 div#efeitomenu{
-    background-color: rgb(0,162,232);
+    background-color: rgba(0,162,232,.6);
 }
 nav#menu-principal{
-    background-color: rgb(0,162,232);
-    width: 700px;
-    height: 45px;
+    background-color: rgba(0,162,232);
+    width: 900px;
+    height: 65px;
     margin: 0px auto;
     padding: 0px;
-    border-bottom: white solid 1px;
     position: relative;
 }
 nav#menu-principal ul{
     background-color: rgb(0,162,232);
     list-style: none;
-    width: 700px;
-    height: 45px;
+    width: 900px;
+    height: 65px;
     margin: 0px auto;
     padding: 0px;
     position: fixed;
@@ -30,112 +28,107 @@ nav#menu-principal ul{
     z-index: 9999;
 }
 nav#menu-principal li{
-    background-color: rgba(0,0,0,.3);
-    padding: 12px 18px 12px 28px;
+    background-color: rgb(0,162,232);
+    padding: 19px 29px 19px 29px;
     margin: 0px -2px;
     display: inline-block;
     color: white;
     font-family: arial;
-    font-size: 13pt;
-    border-left: solid white 1px;
+    font-size: 17pt;
+    border-left: solid black 1px;
+    border-bottom: solid black 1px;
     transition: all 1s;
 }
 nav#menu-principal li:hover{
-    padding: 12px 28px 12px 18px;
-    background-color: rgba(255,75,75,.6);
+    padding: 19px 38px 19px 20px;
+    background-color: rgba(0,0,0,.5);
 }
 div#detalhes{
     background-color: white;
-    width: 717px;
-    height: 350px;
-    margin: 105px auto 0px auto;
-    border: 3px outset #2e8bff;
+    width: 1005px;
+    height: 500px;
+    margin: 150px auto 0px auto;
+    border: 2px outset #2e8bff;
+    box-shadow: 3px 7px 2px black;
     transition: all .7s;
 }
-div#detalhes:hover{
-    border: 4px inset #2e8bff;
-}
 div#PrevNoticiaG{
-    background-repeat: round;
-    background-attachment: fixed;
-    margin: 5px 0px 0px 364px;
-    padding: 21px;
+    background-repeat: repeat;
+    margin: 5px 0px 0px 510px;
+    padding: 30px;
     position: absolute;
-    width: 301px;
-    height: 301px;
+    width: 430px;
+    height: 430px;
     transition: all 1s;
     z-index: 1;
 }
 div#PrevNoticiaG:hover{
     margin-top: 0px;
-    margin-left: 364px;
+    margin-left: 510px;
     opacity: 5;
-    width: 325px;
-    height: 308px;
+    width: 465px;
+    height: 440px;
     box-shadow: -5px 0px 3px #909090;
 }
 div#PrevNoticiaM{
-    background-attachment: fixed;
-    background-repeat: round;
-    margin: 178px 0px 0px 189px;
-    padding: 7px;
+    background-repeat: repeat;
+    margin: 255px 0px 0px 260px;
+    padding: 10px;
     position: absolute;
     float: right;
-    width: 158px;
-    height: 154px;
+    width: 225px;
+    height: 220px;
     transition: all 1s;
     z-index: 1;
 }
 div#PrevNoticiaM:hover{
-    margin-top: 178px;
-    margin-left: 185px;
-    width: 161px;
-    height: 175px;
+    margin-top: 255px;
+    margin-left: 255px;
+    width: 230px;
+    height: 250px;
     box-shadow: 5px -5px 3px #909090;
 }
 div#PrevNoticiaMTwo{
-    background-attachment: fixed;
-    background-repeat: round;
-    margin: 178px 0px 0px 13px;
-    padding: 7px;
+    background-repeat: repeat;
+    margin: 255px 0px 0px 5px;
+    padding: 10px;
     position: absolute;
-    width: 158px;
-    height: 154px;
+    width: 230px;
+    height: 220px;
     transition: all 1s;
     z-index: 1;
 }
 div#PrevNoticiaMTwo:hover{
-    margin-top: 176px;
-    margin-left: -4px;
-    width: 175px;
-    height: 175px;
+    margin-top: 255px;
+    margin-left: -15px;
+    width: 250px;
+    height: 250px;
     box-shadow: 5px -5px 3px #909090;
 }
 div#PrevNoticiaP{
-    background-attachment: fixed;
-    background-repeat: round;
-    padding: 7px;
+    background-repeat: repeat;
+    padding: 10px;
     position: absolute;
-    margin: 4px 0px 0px 13px;
-    width: 336px;
-    height: 157px;
+    margin: 5px 0px 0px 5px;
+    width: 480px;
+    height: 225px;
     transition: all 1s;
     z-index: 1;
 }
 div#PrevNoticiaP:hover{
-    margin-top: -12px;
-    margin-left: -4px;
-    width: 350px;
-    height:728 175px;
+    margin-top: -20px;
+    margin-left: -15px;
+    width: 500px;
+    height: 250px;
     box-shadow: 5px 5px 3px #909090;
 }
 div#propa{
-    width: 510px;
-    height: 89px;
+    width: 728px;
+    height: 127px;
     background-color: white;
-    border-radius: 7px;
-    margin: 25px auto;
-    padding: 7px;
+    border-radius: 10px;
+    margin: 50px auto;
+    padding: 10px;
 }
 div#formulario{
     background-color: rgba(0,0,0,.5);
@@ -241,28 +234,25 @@ div#formulario textarea{
 }
 div#conteudo{
     background-color: white;
-    width: 770px;
-    margin: 25px auto 0px auto;
+    width: 1100px;
+    margin: 50px auto 0px auto;
     height: 2000px;
-    border: 5px outset #2e8bff;
+    border: 10px outset #2e8bff;
     transition: all .7s;
 }
-div#conteudo:hover{
-    border: 3px inset #2e8bff;
-}
 div#conteudo section{
-    width: 462px;
+    width: 660px;
     margin: 0px auto 0px 0px;
-    padding: 7px;
+    padding: 10px;
     float: left;
 }
 div#conteudo section ul{
     list-style: disclosure-closed;
-    padding: 0px 7px 0px 7px;
+    padding: 0px 10px 0px 10px;
     margin: 0px;
 }
 div#conteudo section ul li{
-    padding: 4px 0px 0px 4px;
+    padding: 5px 0px 0px 5px;
     margin: 0px;
     font-family: arial, sans-serif;
 }
@@ -275,50 +265,49 @@ article{
     padding: 0px;
 }
 article img#tamsection{
-    margin: 21px auto 21px auto;
-    width: 406px;
+    margin: 30px auto 30px auto;
+    width: 580px;
 }
 iframe#youtube{
-    margin: 21px 0px;
-    width: 455px;
-    height: 259px;
+    margin: 30px 0px;
+    width: 650px;
+    height: 370px;
     border: none;
 }
 div#conteudo aside{
-    width: 280px;
-    height: 420px;
+    width: 400px;
+    height: 600px;
     margin: 0px;
     padding: 0px;
     float: right;
 }
 div#video{
     background-color: #eeeeee;
-    width: 266px;
-    height: 210px;
-    padding: 7px;
-    margin: 0px 0px 84px 0px;
-    border-radius: 0px 0px 0px 28px;
+    width: 380px;
+    height: 300px;
+    padding: 10px;
+    margin: 0px 0px 120px 0px;
+    border-radius: 0px 0px 0px 40px;
 }
 div#video iframe{
-    width: 266px;
-    height: 154px;
+    width: 380px;
+    height: 220px;
 }
 div#propaganda{
     background-color: #eeeeee;
-    width: 245px;
-    height: 154px;
-    margin: 35px 0px 0px 35px;
+    width: 350px;
+    height: 220px;
+    margin: 50px 0px 0px 50px;
     vertical-align: center;
-    border-radius: 28px 0px 0px 28px;
+    border-radius: 40px 0px 0px 40px;
     transition: all .5s;
 }
 div#propaganda:hover{
     background-color: #fa4949;
-    width: 238px;
-    margin-left: 42px;
+    width: 340px;
+    margin-left: 60px;
 }
 footer{
     display: inline-block;
     clear: both;
-}
 }

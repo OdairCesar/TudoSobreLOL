@@ -24,68 +24,55 @@ class Pagina {
     private $escolha;
 
     //Metodos que formar objetos diferenciando cada
-    private function objInicio($escolha){
-        $this->DefinirAside($escolha);
-        if(($escolha == 0) || ($escolha == 2)){
-            $this->tipo = "Noticia";
-        } else if($escolha == 1){
-            $this->tipo = "Zoera";
-        } else if($escolha == 3){
-            $this->tipo = "Tier";
-        }
-        $this->PassarValores($escolha);
-        if(($escolha == 0) || ($escolha == 2)){
-            $this->setObjConteudo(new Noticias(true, $this->titulo, $this->subtitulo, $this->data, $this->autoria, $this->imagem, $this->video, $this->artigo, $this->pagRelaciona));
-        } else if($escolha == 1){
-            $this->setObjConteudo(new Zoeras(true, $this->titulo, $this->subtitulo, $this->data, $this->autoria, $this->imagem, $this->video, $this->artigo, $this->pagRelaciona));
-        } else if($escolha == 3){
-            $this->setObjConteudo(new Tier(true, $this->titulo, $this->subtitulo, $this->autoria, $this->data, $this->imagem, $this->video, $this->bufs, $this->nerfs, $this->tabela, $this->artigo, $this->pagRelaciona));
-        }
-    }
     protected function DefinirAside(){
         //Irá definir o que das pesquisas passará para o pagRelaciona (Artigo relacionados ao artigo
         switch ($this->getEscolha()){
             case 0:
                 $this->aside = array(
-                    array($this->objPesquisa->resposta[3][0], $this->objPesquisa->resposta[3][1], 3),
-                    array($this->objPesquisa->resposta[1][0], $this->objPesquisa->resposta[1][1], 1));
+                    array($this->objPesquisa->getResultado()[3][0], $this->objPesquisa->getResultado()[3][1], 3),
+                    array($this->objPesquisa->getResultado()[1][0], $this->objPesquisa->getResultado()[1][1], 1));
                 break;
             case 1:
                 $this->aside = array(
-                    array($this->objPesquisa->resposta[2][0], $this->objPesquisa->resposta[2][1], 2),
-                    array($this->objPesquisa->resposta[0][0], $this->objPesquisa->resposta[0][1], 0));
+                    array($this->objPesquisa->getResultado()[2][0], $this->objPesquisa->getResultado()[2][1], 2),
+                    array($this->objPesquisa->getResultado()[0][0], $this->objPesquisa->getResultado()[0][1], 0));
                 break;
             case 2:
                 $this->aside = array(
-                    array($this->objPesquisa->resposta[3][0], $this->objPesquisa->resposta[3][1], 3),
-                    array($this->objPesquisa->resposta[1][0], $this->objPesquisa->resposta[1][1], 1));
+                    array($this->objPesquisa->getResultado()[3][0], $this->objPesquisa->getResultado()[3][1], 3),
+                    array($this->objPesquisa->getResultado()[1][0], $this->objPesquisa->getResultado()[1][1], 1));
                 break;
             case 3:
                 $this->aside = array(
-                    array($this->objPesquisa->resposta[2][0], $this->objPesquisa->resposta[2][1], 2),
-                    array($this->objPesquisa->resposta[0][0], $this->objPesquisa->resposta[0][1], 0));
+                    array($this->objPesquisa->getResultado()[2][0], $this->objPesquisa->getResultado()[2][1], 2),
+                    array($this->objPesquisa->getResultado()[0][0], $this->objPesquisa->getResultado()[0][1], 0));
                 break;
         }
     }
     protected function PassarValores($tipo){
-        $this->titulo = $this->objPesquisa->resposta[$this->escolha][0];
-        $this->subtitulo = $this->objPesquisa->resposta[$this->escolha][1];
-        $this->data = $this->objPesquisa->resposta[$this->escolha][2];
-        $this->autoria = $this->objPesquisa->resposta[$this->escolha][3];
-        $this->imagem = $this->objPesquisa->resposta[$this->escolha][5];
-        $this->video = $this->objPesquisa->resposta[$this->escolha][6];
+        $this->titulo = $this->objPesquisa->getResultado()[$this->escolha][0];
+        $this->subtitulo = $this->objPesquisa->getResultado()[$this->escolha][1];
+        $this->data = $this->objPesquisa->getResultado()[$this->escolha][2];
+        $this->autoria = $this->objPesquisa->getResultado()[$this->escolha][3];
+        $this->imagem = $this->objPesquisa->getResultado()[$this->escolha][5];
+        $this->video = $this->objPesquisa->getResultado()[$this->escolha][6];
         if ($tipo == "Tier"){
-            $this->bufs = $this->objPesquisa->resposta[$this->escolha][7];
-            $this->nerfs = $this->objPesquisa->resposta[$this->escolha][8];
-            $this->tabela = $this->objPesquisa->resposta[$this->escolha][9];
-            $this->artigo = $this->objPesquisa->resposta[$this->escolha][10];
+            $this->bufs = $this->objPesquisa->getResultado()[$this->escolha][7];
+            $this->nerfs = $this->objPesquisa->getResultado()[$this->escolha][8];
+            $this->tabela = $this->objPesquisa->getResultado()[$this->escolha][9];
+            $this->artigo = $this->objPesquisa->getResultado()[$this->escolha][10];
         } elseif ($tipo == "Noticia" || $tipo = "Zoera") {
-            $this->artigo = $this->objPesquisa->resposta[$this->escolha][7];
+            $this->artigo = $this->objPesquisa->getResultado()[$this->escolha][7];
         } elseif ($tipo == "Atualizacao") {
-            $this->campeao = $this->objPesquisa->resposta[$this->escolha][7];
-            $this->habilidade = $this->objPesquisa->resposta[$this->escolha][8];
-            $this->mudanca = $this->objPesquisa->resposta[$this->escolha][9];
+            $this->campeao = $this->objPesquisa->getResultado()[$this->escolha][7];
+            $this->habilidade = $this->objPesquisa->getResultado()[$this->escolha][8];
+            $this->mudanca = $this->objPesquisa->getResultado()[$this->escolha][9];
         }
+    }
+    public function FazerMetas(){
+        echo "<title>{$this->getTitulo()}</title>";
+        echo "<meta name='author' content='{$this->getautoria()}'>";
+        echo "<meta name='description' content='{$this->getSubtitulo()}'>";
     }
 
     //Metodos Getter e Setter
@@ -185,5 +172,5 @@ class Pagina {
     public function setMudanca($mudanca) {
         $this->mudanca = $mudanca;
     }
-    
+
 }

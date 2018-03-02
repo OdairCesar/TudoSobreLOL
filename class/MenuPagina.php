@@ -7,7 +7,7 @@
 class MenuPagina{
     //Links para o menu
     private $home, $noticia, $streams, $atualizacao, $tier, $contato;
-    
+
     public function PassarLinks($home, $noticia, $streams, $atualizacao, $tier, $contato){
         $this->setHome($home);
         $this->setNoticia($noticia);
@@ -19,12 +19,12 @@ class MenuPagina{
     public function ConstrutorManual(){
         echo "<div id='efeitomenu'>";
         echo "<nav id='menu-principal'><ul>
-                <a href='{$this->getHome()}'><li style='border:none;'>Home</li></a>
+                <a href='{$this->getHome()}'><li>Home</li></a>
                 <a href='{$this->getNoticia()}'><li>Noticias</li></a>
                 <a href='{$this->getStreams()}'><li>Zueras</li></a>
                 <a href='{$this->getAtualizacao()}'><li>Atualização</li></a>
                 <a href='{$this->getTier()}'><li>Tier List</li></a>
-                <a href='{$this->getContato()}'><li>Fale Conosco</li></a>
+                <a href='{$this->getContato()}'><li style='border-right: solid black 1px;'>Fale Conosco</li></a>
             </ul></nav>";
         echo "</div>";
     }
