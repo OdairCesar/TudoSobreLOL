@@ -16,6 +16,18 @@ abstract class Conteudo{
         echo "<h3>Por: {$this->getAutoria()} Em:{$this->getData()}</h3>\n";
         echo "</hgroup>\n";
     }
+    protected function MontarComentario($quant, $comentario){
+        for ($con=0; $con<$quant; $con++){
+            echo "<div id='comentario'>";
+            echo "<h5><b>De: </b>".$comentario[$con][0]."</h5>";
+            echo "<p>".$comentario[$con][1]."</p>";
+            echo "</div>";
+        }
+    }
+    protected function FormularioComentario(){
+        echo "<form>";
+        echo "</form>";
+    }
     protected function MontarAside(){
         echo "<aside>\n";
         echo "<div id='video'>\n";

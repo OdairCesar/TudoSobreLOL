@@ -15,12 +15,14 @@ require_once 'QueryInicio.php';
 require_once 'QueryNoticia.php';
 require_once 'QueryTier.php';
 require_once 'QueryZoeras.php';
+require_once 'QueryComentarios.php';
 require_once 'MenuPagina.php';
 class Pagina {
     //1.Atributos
     private $aside;//Recebe parte do objeto para aside
     private $objPesquisa; //Recebe o objetos
     private $titulo, $subtitulo, $data, $autoria, $imagem, $video, $campeao, $habilidade, $mudanca, $bufs, $nerfs, $tabela, $artigo; //1.1.Atributos peguam receber os atributos  da SuperClasse Query para passam nas demais SuperClasse
+    private $comentario;
     private $escolha;
 
     //Metodos que formar objetos diferenciando cada
@@ -68,6 +70,11 @@ class Pagina {
             $this->habilidade = $this->objPesquisa->getResultado()[$this->escolha][8];
             $this->mudanca = $this->objPesquisa->getResultado()[$this->escolha][9];
         }
+    }
+    protected function PesquisarComentario($quant){
+        $objPesqComent = new QueryComentarios();
+        $objPesqComent->QueryLimit($quant);
+        $this->setComentario($objPesqComent->getResultado());  
     }
     public function FazerMetas(){
         echo "<title>{$this->getTitulo()}</title>";
@@ -171,6 +178,12 @@ class Pagina {
     }
     public function setMudanca($mudanca) {
         $this->mudanca = $mudanca;
+    }
+    public function getComentario(){
+        return $this->comentario;
+    }
+    public function setComentario($comentario){
+        $this->comentario = $comentario;
     }
 
 }

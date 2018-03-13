@@ -37,7 +37,7 @@ class PaginaNoticias extends Pagina{
          *A variavel $logicoAside também é um logico que esta perguntando se o conteudo aside que estara do lado da artigo será feito ou não;
          */
         $this->DefinirAside();
-        $this->objConteudo = new Noticias($logicoLocal, $logicoAside, $this->getTitulo(), $this->getSubtitulo(), $this->getAutoria(), $this->getData(), $this->getImagem(), $this->getVideo(), $this->getArtigo(), $this->getAside());
+        $this->objConteudo = new Noticias($logicoLocal, $logicoAside, $this->getTitulo(), $this->getSubtitulo(), $this->getAutoria(), $this->getData(), $this->getImagem(), $this->getVideo(), $this->getArtigo(), $this->getAside(), $this->getComentario());
     }
     public function MontarMenu(){
         /*
@@ -58,6 +58,7 @@ class PaginaNoticias extends Pagina{
         $this->objMenu = new MenuPagina();
         $this->objDetalhes = new Detalhes();
         //$this->objFooter = new Footer();
+        $this->PesquisarComentario(1);
         $this->setObjPesquisa(new QueryNoticia());
         if ($logico){
             $this->objPesquisa->QueryWhere("titulo LIKE $pesquisa");
