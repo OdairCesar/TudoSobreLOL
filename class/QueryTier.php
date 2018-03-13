@@ -6,9 +6,6 @@
  */
 require_once 'SistemaQuery.php';
 class QueryTier extends SistemaQuery{
-    //Atributos
-    public $resposta;
-
     //Metodos
     public function QueryLimit($limit){
         $this->setQuery("SELECT * FROM tier_s ORDER BY lancamento desc LIMIT $limit");
@@ -27,17 +24,9 @@ class QueryTier extends SistemaQuery{
         $this->ResponderQuery();
     }
     protected function ResponderQuery(){
-        $select = $this->conexao->query($this->getQuery());
+        $select = $this->getConexao()->query($this->getQuery());
         while($res = $select->fetch(PDO::FETCH_OBJ)){
-            $this->resposta[] = array($res->versao, $res->descricao, $res->lancamento, $res->criador, $res->site_origem, $res->imagem, $res->video, $res->bufs, $res->nerfs, $res->tabela, $res->expricacao);
+            $this->setResultado(array($res->versao, $res->descricao, $res->lancamento, $res->criador, $res->site_origem, $res->imagem, $res->video, $res->bufs, $res->nerfs, $res->tabela, $res->expricacao));
         }
-    }
-
-    //Metodos Especiais
-    public function getReposta() {
-        return $this->reposta;
-    }
-    public function setReposta($reposta) {
-        $this->reposta = $reposta;
     }
 }

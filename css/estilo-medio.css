@@ -1,0 +1,318 @@
+/*Divs e Navs*/
+@media only screen and (max-width: 1099px){
+body{
+    background-image: url(../imagens/papel-fundo.jpg);
+    background-attachment: fixed;
+    margin: 0px;
+    padding: 0px;
+}
+div#efeitomenu{
+    background-color: rgba(0,162,232,.8);
+}
+nav#menu-principal{
+    background-color: rgb(0,162,232);
+    width: 700px;
+    height: 45px;
+    margin: 0px auto;
+    padding: 0px;
+    position: relative;
+}
+nav#menu-principal ul{
+    background-color: rgb(0,162,232);
+    list-style: none;
+    width: 700px;
+    height: 45px;
+    margin: 0px auto;
+    padding: 0px;
+    position: fixed;
+    display: block;
+    z-index: 9999;
+}
+nav#menu-principal li{
+    background-color: rgb(0,162,232);
+    padding: 12px 18px 12px 28px;
+    margin: 0px -2px;
+    display: inline-block;
+    color: white;
+    font-family: arial;
+    font-size: 13pt;
+    border-left: solid black 1px;
+    border-bottom: solid black 1px;
+    transition: all 1s;
+}
+nav#menu-principal li:hover{
+    padding: 12px 28px 12px 18px;
+    background-color: rgba(0,0,0,.5);
+}
+div#detalhes{
+    background-color: white;
+    width: 717px;
+    height: 350px;
+    margin: 105px auto 0px auto;
+    border: 3px outset #2e8bff;
+    box-shadow: 2px 4px 2px black;
+    transition: all .7s;
+}
+div#detalhes:hover{
+    border: 4px inset #2e8bff;
+}
+div#PrevNoticiaG{
+    background-repeat: round;
+    margin: 4px 0px 0px 364px;
+    padding: 21px;
+    position: absolute;
+    width: 301px;
+    height: 300px;
+    transition: all 1s;
+    z-index: 1;
+}
+div#PrevNoticiaG:hover{
+    margin-top: 0px;
+    margin-left: 364px;
+    opacity: 5;
+    width: 325px;
+    height: 308px;
+    box-shadow: -2px 0px 3px #909090;
+}
+div#PrevNoticiaM{
+    background-repeat: round;
+    margin: 178px 0px 0px 189px;
+    padding: 7px;
+    position: absolute;
+    float: right;
+    width: 158px;
+    height: 154px;
+    transition: all 1s;
+    z-index: 1;
+}
+div#PrevNoticiaM:hover{
+    margin-top: 178px;
+    margin-left: 185px;
+    width: 161px;
+    height: 175px;
+    box-shadow: 2px -2px 3px #909090;
+}
+div#PrevNoticiaMTwo{
+    background-repeat: round;
+    margin: 178px 0px 0px 13px;
+    padding: 7px;
+    position: absolute;
+    width: 158px;
+    height: 154px;
+    transition: all 1s;
+    z-index: 1;
+}
+div#PrevNoticiaMTwo:hover{
+    margin-top: 176px;
+    margin-left: -4px;
+    width: 175px;
+    height: 175px;
+    box-shadow: 2px -2px 3px #909090;
+}
+div#PrevNoticiaP{
+    background-repeat: round;
+    padding: 7px;
+    position: absolute;
+    margin: 4px 0px 0px 13px;
+    width: 334px;
+    height: 157px;
+    transition: all 1s;
+    z-index: 1;
+}
+div#PrevNoticiaP:hover{
+    margin-top: -12px;
+    margin-left: -4px;
+    width: 352px;
+    height: 175px;
+    box-shadow: 2px 2px 3px #909090;
+}
+div#propa{
+    width: 510px;
+    height: 89px;
+    background-color: white;
+    border-radius: 7px;
+    margin: 25px auto;
+    padding: 7px;
+}
+div#formulario{
+    background-color: rgba(0,0,0,.5);
+    width: 760px;
+    padding: 10px;
+    margin: 150px auto 150px auto;
+    height: 850px;
+    border-radius: 20px;
+    transition: all .7s;
+}
+fieldset#Pessoa{
+    margin: 10px;
+    padding: 10px;
+    border: none;
+}
+fieldset#Pessoa legend{
+    margin: 0px;
+    padding: 0px;
+    color: white;
+    font-size: 15pt;
+    font-family: arial;
+}
+div#formulario p{
+    color: #d8d8d8;
+    font-family: Corbel;
+    font-size: 18pt;
+    text-align: left;
+}
+div#formulario input#Inome{
+    background-color: rgba(0,0,0,.3);
+    font-size: 15pt;
+    color: rgba(250,250,250,.7);
+    border-radius: 10px;
+    border-color: rgba(0,0,0,.3);
+    border-style: solid;
+    margin-left: 8px;
+    margin-right: 5px;
+    width: 245px;
+    height: 45px;
+}
+div#formulario input#Isobrenome{
+    background-color: rgba(0,0,0,.3);
+    font-size: 15pt;
+    color: rgba(250,250,250,.7);
+    border-radius: 10px;
+    border-color: rgba(0,0,0,.3);
+    border-style: solid;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 245px;
+    height: 45px;
+}
+div#formulario input#Iemail{
+    background-color: rgba(0,0,0,.3);
+    font-size: 15pt;
+    color: rgba(250,250,250,.7);
+    border-radius: 10px;
+    border-color: rgba(0,0,0,.3);
+    border-style: solid;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 630px;
+    height: 45px;
+}
+div#formulario input#Iidade{
+    background-color: rgba(0,0,0,.3);
+    font-size: 15pt;
+    color: rgba(250,250,250,.7);
+    border-radius: 10px;
+    border-color: rgba(0,0,0,.3);
+    border-style: solid;
+    margin-left: 15px;
+    margin-right: 5px;
+    width: 80px;
+    height: 45px;
+}
+fieldset#Avaliacao{
+    margin: 50px 0px 0px -10px;
+    padding: 10px;
+    border: none;
+}
+fieldset#Avaliacao legend{
+    margin: 0px;
+    padding: 0px;
+    color: white;
+    font-size: 15pt;
+    font-family: arial;
+}
+div#formulario input#Inota{
+    margin: 0px;
+    width: 590px;
+}
+div#formulario textarea{
+    background-color: rgba(0,0,0,.3);
+    font-size: 15pt;
+    color: rgba(250,250,250,.7);
+    border-radius: 10px;
+    border-color: rgba(0,0,0,.3);
+    border-style: solid;
+    margin: 0px;
+    width: 720px;
+    height: 250px;
+}
+div#conteudo{
+    background-color: white;
+    width: 770px;
+    margin: 25px auto 0px auto;
+    height: 2000px;
+    border: 5px outset #2e8bff;
+    transition: all .7s;
+}
+div#conteudo section{
+    width: 462px;
+    margin: 0px auto 0px 0px;
+    padding: 7px;
+    float: left;
+}
+div#conteudo section ul{
+    list-style: disclosure-closed;
+    padding: 0px 7px 0px 7px;
+    margin: 0px;
+}
+div#conteudo section ul li{
+    padding: 4px 0px 0px 4px;
+    margin: 0px;
+    font-family: arial, sans-serif;
+}
+hgroup#enunciado{
+    margin: 0px;
+    padding: 0px;
+}
+article{
+    margin: 0px;
+    padding: 0px;
+}
+article img#tamsection{
+    margin: 21px auto 21px auto;
+    width: 406px;
+}
+iframe#youtube{
+    margin: 21px 0px;
+    width: 455px;
+    height: 259px;
+    border: none;
+}
+div#conteudo aside{
+    width: 280px;
+    height: 420px;
+    margin: 0px;
+    padding: 0px;
+    float: right;
+}
+div#video{
+    background-color: #eeeeee;
+    width: 266px;
+    height: 210px;
+    padding: 7px;
+    margin: 0px 0px 84px 0px;
+    border-radius: 0px 0px 0px 28px;
+}
+div#video iframe{
+    width: 266px;
+    height: 154px;
+}
+div#propaganda{
+    background-color: #eeeeee;
+    width: 245px;
+    height: 154px;
+    margin: 35px 0px 0px 35px;
+    vertical-align: center;
+    border-radius: 28px 0px 0px 28px;
+    transition: all .5s;
+}
+div#propaganda:hover{
+    background-color: #fa4949;
+    width: 238px;
+    margin-left: 42px;
+}
+footer{
+    display: inline-block;
+    clear: both;
+}
+}

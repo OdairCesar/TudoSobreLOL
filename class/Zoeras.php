@@ -31,7 +31,7 @@ class Zoeras extends Conteudo {
     }
     
     //Metodo construdor
-    public function __construct($logicLink, $titulo, $subtitulo, $autoria, $data, $imagem, $video, $artigo, $pagRelaciona) {
+    public function __construct($logicLink, $logicAside, $titulo, $subtitulo, $autoria, $data, $imagem, $video, $artigo, $pagRelaciona) {
         parent::__construct($titulo, $subtitulo, $autoria, $data, $imagem, $video, $pagRelaciona);
         $this->setArtigo($artigo);
         $this->PropagandaAdSense();
@@ -42,7 +42,9 @@ class Zoeras extends Conteudo {
         $this->MontarArtigo($logicLink);
         echo "</article>";
         echo "</section>";
-        $this->MontarAside();
+        if ($logicAside){
+            $this->MontarAside();
+        }
         echo "</div>";
     }
 

@@ -7,16 +7,13 @@
 abstract class Conexao{
     //Atributos
     private $Local, $usuario, $senha, $db;
-    protected $conexao;
+    private $conexao;
 
     //Metodos
     private function Acessar(){
         try{
             $this->conexao = new PDO('mysql:host='.$this->getLocal().';dbname='. $this->getDb(), $this->getUsuario(), $this->getSenha());
             $this->conexao->exec("set names utf8");
-            /*$this->conexao->exec('SET character_set_connection=utf8');
-            $this->conexao->exec('SET character_set_client=utf8');
-            $this->conexao->exec('SET character_set_results=utf8');*/
         } catch(PDOException $e){
             echo "Erro ao conectar".$e->getMessage();
         }
@@ -36,28 +33,28 @@ abstract class Conexao{
     protected function setConexao($conexao){
         $this->conexao = $conexao;
     }
-    private function getLocal() {
+    protected function getLocal() {
         return $this->Local;
     }
-    private function getUsuario() {
+    protected function getUsuario() {
         return $this->usuario;
     }
-    private function getSenha() {
+    protected function getSenha() {
         return $this->senha;
     }
-    private function getDb() {
+    protected function getDb() {
         return $this->db;
     }
-    private function setLocal($Local) {
+    protected function setLocal($Local) {
         $this->Local = $Local;
     }
-    private function setUsuario($usuario) {
+    protected function setUsuario($usuario) {
         $this->usuario = $usuario;
     }
-    private function setSenha($senha) {
+    protected function setSenha($senha) {
         $this->senha = $senha;
     }
-    private function setDb($db) {
+    protected function setDb($db) {
         $this->db = $db;
     }
 }

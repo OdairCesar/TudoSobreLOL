@@ -31,7 +31,7 @@ class Noticias extends Conteudo {
     }
     
     //Metodo construdor
-    public function __construct($logicLink, $titulo, $subtitulo, $autoria, $data, $imagem, $video, $artigo, $pagRelaciona) {
+    public function __construct($logicLink, $logicAside, $titulo, $subtitulo, $autoria, $data, $imagem, $video, $artigo, $pagRelaciona, $comentario) {
         parent::__construct($titulo, $subtitulo, $autoria, $data, $imagem, $video, $pagRelaciona);
         $this->setArtigo($artigo);
         $this->PropagandaAdSense();
@@ -40,9 +40,12 @@ class Noticias extends Conteudo {
         echo "<article>";
         $this->MontarHgroup();
         $this->MontarArtigo($logicLink);
+        $this->MontarComentario(1, $comentario);
         echo "</article>";
         echo "</section>";
-        $this->MontarAside();
+        if ($logicAside){
+            $this->MontarAside();
+        }
         echo "</div>";
     }
 
