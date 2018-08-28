@@ -24,7 +24,7 @@ abstract class Conexao{
         $this->setLocal("localhost");
         $this->setUsuario("root");
         $this->setSenha("");
-        $this->setDb("tudosob1_lol");
+        $this->setDb("id760856_lol");
         $this->Acessar();
     }
     protected function getConexao(){

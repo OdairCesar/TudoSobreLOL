@@ -4,8 +4,8 @@
  *
  * @author Odair
  */
-require_once 'SistemaQuery.php';
-class QueryTier extends SistemaQuery{
+require_once 'Query.php';
+class QueryTier extends Query{
     //Metodos
     public function QueryLimit($limit){
         $this->setQuery("SELECT * FROM tier_s ORDER BY lancamento desc LIMIT $limit");

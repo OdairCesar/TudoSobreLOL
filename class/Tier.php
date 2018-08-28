@@ -14,9 +14,9 @@ class Tier extends Conteudo{
         echo "<p><b>Bufs:</b> {$this->getBufs()}</p>\n";
         echo "<p><b>Nerfs:</b> {$this->getNerfs()}</p>\n";
         if ($logicLink == true){
-            echo "<center><img src='{$this->getTabela()}'></center>\n";
-        }else{
             echo "<center><img src='../{$this->getTabela()}'></center>\n";
+        }else{
+            echo "<center><img src='../../{$this->getTabela()}'></center>\n";
         }
         echo "<script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>\n
             <!-- Propaganda lateral -->\n
@@ -30,10 +30,11 @@ class Tier extends Conteudo{
         </script>\n";
         echo "<p>{$this->getEspecificacoes()}</p>\n";
         echo "<iframe id='youtube' src='{$this->getVideo()}' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>\n";
+        $this->FormularioComentario();
     }
     
     //Metodo Contrudor
-    public function __construct($logicLink, $logicAside, $titulo, $subtitulo, $autoria, $data, $imagem, $video, $bufs, $nerfs, $tabela, $especificacoes, $aside) {
+    public function __construct($logicLink, $logicAside, $titulo, $subtitulo, $autoria, $data, $imagem, $video, $bufs, $nerfs, $tabela, $especificacoes, $aside, $comentario) {
         parent::__construct($titulo, $subtitulo, $autoria, $data, $imagem, $video, $aside);
         $this->setBufs($bufs);
         $this->setNerfs($nerfs);
@@ -50,6 +51,7 @@ class Tier extends Conteudo{
         if ($logicAside){
             $this->MontarAside();
         }
+        $this->MontarFooter($comentario);
         echo "</div>\n";
     }
     

@@ -4,7 +4,8 @@
  *
  * @author Odair
  */
-class QueryComentarios extends SistemaQuery{
+require_once "Query.php";
+class QueryComentarios extends Query{
     public function QueryLimit($limit){
         $this->setQuery("SELECT * FROM comentarios LIMIT $limit");
         $this->ResponderQuery();

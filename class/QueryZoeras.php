@@ -4,8 +4,8 @@
  *
  * @author Odair
  */
-require_once 'SistemaQuery.php';
-class QueryZoeras extends SistemaQuery {
+require_once 'Query.php';
+class QueryZoeras extends Query {
     //Metodos
     public function QueryLimit($limit){
         $this->setQuery("SELECT * FROM zoeras ORDER BY lancamento desc LIMIT $limit");

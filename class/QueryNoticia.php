@@ -4,8 +4,8 @@
  *
  * @author Odair
  */
-require_once 'SistemaQuery.php';
-class QueryNoticia extends SistemaQuery{
+require_once 'Query.php';
+class QueryNoticia extends Query{
     //Metodos
     public function QueryLimit($limit){
         $this->setQuery("SELECT * FROM noticias ORDER BY lancamento desc LIMIT $limit");

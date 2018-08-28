@@ -9,24 +9,46 @@ abstract class Conteudo{
     private $titulo, $subtitulo, $autoria, $data, $imagem, $video, $pagRelaciona; 
     
     //Metodos
-    protected function MontarHgroup(){
+    protected function MontarHgroup(){//Coloca o titulo, subtitulo e autor do artigo passado pela Query.php, em uma estrutura HTML
         echo "<hgroup id='enunciado'>\n";
         echo "<h1>{$this->getTitulo()}</h1>\n";
         echo "<h2>{$this->getSubtitulo()}</h2>\n";
         echo "<h3>Por: {$this->getAutoria()} Em:{$this->getData()}</h3>\n";
         echo "</hgroup>\n";
     }
-    protected function MontarComentario($quant, $comentario){
-        for ($con=0; $con<$quant; $con++){
-            echo "<div id='comentario'>";
-            echo "<h5><b>De: </b>".$comentario[$con][0]."</h5>";
-            echo "<p>".$comentario[$con][1]."</p>";
-            echo "</div>";
+    protected function MontarComentario($comentario){//Coloca os comentarios em HTML, ela sera colocada dentro da função MontarFoooter
+        echo "<div id='comentario'>\n";
+        for($con= 0; $con<2; $con++){
+            echo "<h5><b>De: </b>".$comentario[$con][0]."</h5>\n";
+            echo "<p>".$comentario[$con][1]."</p>\n";
         }
+        echo "</div>";
+    }
+    protected function TernoUsoContato(){
+        echo "<div id='contatoProg'>\n";
+        echo "<p><b>Nome do Programador: </b> Odair Cesar</p>\n";
+        echo "<p><b>E-mail: </b> odairferreira97@gmail.com</p>\n";
+        echo "<p><b>Cidade: </b> Bauru-SP</p>\n";
+        echo "<p><b>Direito de Acesso: </b><a target='_black' href='https://www.adp.com.br/assets/vfs/Family-34/Termos-e-Condicoes-de-Uso.pdf'>© Copyright 2000-2018</a></p>\n";
+        echo "</div>\n";
     }
     protected function FormularioComentario(){
-        echo "<form>";
-        echo "</form>";
+        echo "<form method='post' action='index.php' id='formComenta'>\n";
+        echo "<fieldset>\n";
+        echo "<p><label for='Inome'>Nome:</label>\n";
+        echo "<input id='Inome' type='text' name='nome' maxlength='35' placeholder='OU Seu Nick'></p>\n"; 
+        echo "<p><label for='Icomentario'>Comentario:</label></p>\n";
+        echo "<p><textarea id='Icomentario' name='comentario'></textarea></p>\n";
+        echo "</fieldset>\n";
+        echo "<label for='Ienviar'></label>\n";
+        echo "<input id='Ienviar' type='submit' name='enviar' value='Enviar'>\n";
+        echo "</form>\n";
+    }
+    protected function MontarFooter($comentario){
+        echo "<footer>\n";
+        $this->TernoUsoContato();
+        $this->MontarComentario($comentario);
+        echo "</footer>";
     }
     protected function MontarAside(){
         echo "<aside>\n";
@@ -44,16 +66,15 @@ abstract class Conteudo{
     }
     protected function PropagandaAdSense(){  
         echo "<div id='propa'>\n";
-        echo "<script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>\n
-        <ins class=\"adsbygoogle\"
+        echo "<ins class=\"adsbygoogle\"
             style=\"display:block\"
             data-ad-format=\"fluid\"
             data-ad-layout-key=\"-gw-1s+cd-5x-uk\"
             data-ad-client=\"ca-pub-6479735546054520\"
             data-ad-slot=\"8183552481\"></ins>
-        <script>\n
-            (adsbygoogle = window.adsbygoogle || []).push({});\n
-        </script>\n";
+            <script>\n
+                (adsbygoogle = window.adsbygoogle || []).push({});\n
+            </script>\n";
         echo "</div>\n";
     }
     

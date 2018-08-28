@@ -4,8 +4,8 @@
  *
  * @author Odair
  */
-require_once 'SistemaQuery.php';
-class QueryAtualizacao extends SistemaQuery{
+require_once 'Query.php';
+class QueryAtualizacao extends Query{
     //Metodos
     public function QueryLimit($limit){
         $this->setQuery("SELECT * FROM atualizacao ORDER BY lancamento desc LIMIT $limit");

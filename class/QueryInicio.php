@@ -4,8 +4,8 @@
  *
  * @author Odair
  */
-require_once 'SistemaQuery.php';
-class QueryInicio extends SistemaQuery{
+require_once 'Query.php';
+class QueryInicio extends Query{
     //Metodos
     public function QueryNotUm($where){
         $this->setQuery("SELECT * FROM noticias WHERE $where");

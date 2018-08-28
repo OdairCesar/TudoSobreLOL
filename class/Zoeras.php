@@ -24,14 +24,15 @@ class Zoeras extends Conteudo {
             (adsbygoogle = window.adsbygoogle || []).push({});\n
         </script>\n";
         if ($logicLink){
-            echo "<center><img id='tamsection' src='{$this->getImagem()}'></center>";
-        }else{
             echo "<center><img id='tamsection' src='../{$this->getImagem()}'></center>";
+        }else{
+            echo "<center><img id='tamsection' src='../../{$this->getImagem()}'></center>";
         }
+        $this->FormularioComentario();
     }
     
     //Metodo construdor
-    public function __construct($logicLink, $logicAside, $titulo, $subtitulo, $autoria, $data, $imagem, $video, $artigo, $pagRelaciona) {
+    public function __construct($logicLink, $logicAside, $titulo, $subtitulo, $autoria, $data, $imagem, $video, $artigo, $pagRelaciona, $comentario) {
         parent::__construct($titulo, $subtitulo, $autoria, $data, $imagem, $video, $pagRelaciona);
         $this->setArtigo($artigo);
         $this->PropagandaAdSense();
@@ -45,6 +46,7 @@ class Zoeras extends Conteudo {
         if ($logicAside){
             $this->MontarAside();
         }
+        $this->MontarFooter($comentario);
         echo "</div>";
     }
 

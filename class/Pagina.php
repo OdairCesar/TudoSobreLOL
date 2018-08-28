@@ -15,7 +15,7 @@ require_once 'QueryInicio.php';
 require_once 'QueryNoticia.php';
 require_once 'QueryTier.php';
 require_once 'QueryZoeras.php';
-require_once 'QueryComentarios.php';
+require_once 'AdminComment.php';
 require_once 'MenuPagina.php';
 class Pagina {
     //1.Atributos
@@ -71,10 +71,24 @@ class Pagina {
             $this->mudanca = $this->objPesquisa->getResultado()[$this->escolha][9];
         }
     }
-    protected function PesquisarComentario($quant){
-        $objPesqComent = new QueryComentarios();
-        $objPesqComent->QueryLimit($quant);
+    protected function PesquisarComentario($pagina, $data){
+        /*
+         * Essa função pesquisará os comentarios:
+         * 
+         * $pagina somente aceitara as palavras 'atualizacao','noticias', 'tierlist', 'zoera' e 'todas'.
+         * $quantidades será quantos comentarios, seram pegos.
+         * $data será usada para pesquisar comentarios feitos em um dia especifico
+         */
+        $objPesqComent = new AdminComment();
+        $objPesqComent->Query($pagina, $data);
         $this->setComentario($objPesqComent->getResultado());  
+    }
+    protected function EnviarComent($pagina, $nome, $comentario){
+        /*
+         * Ela enviar o comentario feito para o Banco de Dados
+         */
+        $objPesqComent = new AdminComment();
+        $objPesqComent->Insert($pagina, $nome, $comentario);
     }
     public function FazerMetas(){
         echo "<title>{$this->getTitulo()}</title>";

@@ -12,9 +12,9 @@ class Atualizacao extends Conteudo{
     //Metodos
     protected function MontarArtigo($logicLink){
         if ($logicLink == "true"){
-            echo "<center><img src='{$this->getImagem()}'></center>";
-        } else {
             echo "<center><img src='../{$this->getImagem()}'></center>";
+        } else {
+            echo "<center><img src='../../{$this->getImagem()}'></center>";
         }
         echo "<script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>\n
             <!-- Propaganda lateral -->\n
@@ -30,6 +30,7 @@ class Atualizacao extends Conteudo{
         echo "<p>{$this->getHabilid()}</p>";
         echo "<p>{$this->getMuda()}</p>";
         echo "<iframe id='youtube' src='{$this->getVideo()}' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>";
+        $this->FormularioComentario();
     }
     public function MontarMaisHabilidade($habilidade){
         $this->setHabilid($habilid);
@@ -41,7 +42,7 @@ class Atualizacao extends Conteudo{
     }
 
     //Metodo Construdor
-    public function __construct($logicLink, $logicAside,$titulo, $subtitulo, $autoria, $data, $imagem, $video, $campeao, $habilidade, $mudanca, $pagRelaciona) {
+    public function __construct($logicLink, $logicAside,$titulo, $subtitulo, $autoria, $data, $imagem, $video, $campeao, $habilidade, $mudanca, $pagRelaciona, $comentario) {
         parent::__construct($titulo, $subtitulo, $autoria, $data, $imagem, $video, $pagRelaciona);
         $this->setCamp($campeao);
         $this->setHabilid($habilidade);
@@ -57,6 +58,7 @@ class Atualizacao extends Conteudo{
         if ($logicAside){
             $this->MontarAside();
         }
+        $this->MontarFooter($comentario);
         echo "</div>";
     }
     //Metodos Getter e Setter

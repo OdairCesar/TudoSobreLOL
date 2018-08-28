@@ -5,7 +5,7 @@
  * @author Odair
  */
 require_once 'Conexao.php';
-abstract class SistemaQuery extends Conexao{
+abstract class Query extends Conexao{
     //Atributos
     private $query, $resultado;
 

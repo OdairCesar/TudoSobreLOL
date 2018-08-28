@@ -15,9 +15,9 @@ class Detalhes{
         $this->setTamanho($tamanho);
         $this->setImagem($imagem);
         if ($logico){
-            echo "<a href='index.php?var=$link#propa'><div id='PrevNoticia{$this->getTamanho()}' style='background-image: url(../{$this->getImagem()})'>";
+            echo "<a href='index.php?var=$link#propa'><div id='PrevNoticia{$this->getTamanho()}' style='background-image: url(../../{$this->getImagem()})'>";
         }else{
-            echo "<a href='index.php?var=$link#propa'><div id='PrevNoticia{$this->getTamanho()}' style='background-image: url({$this->getImagem()})'>";
+            echo "<a href='index.php?var=$link#propa'><div id='PrevNoticia{$this->getTamanho()}' style='background-image: url(../{$this->getImagem()})'>";
         }
         echo "<p id='titulo'>{$this->getTitulo()}</h1>";
         echo "<p id='subtitulo'>{$this->getSubtitulo()}</h2>";
