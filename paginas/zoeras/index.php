@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="../../css/estilo-medio.css">
         <link rel="stylesheet" type="text/css" href="../../css/fontes.css">
         <link rel="stylesheet" type="text/css" href="../../css/fontes-medio.css">
-        <link rel="shortcut icon" href="../imagens/logo-lol.jpg">
+        <link rel="shortcut icon" href="../../imagens/logo-lol.jpg">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <script>
             (adsbygoogle = window.adsbygoogle || []).push({

@@ -10,15 +10,9 @@ class Atualizacao extends Conteudo{
     private $camp, $habilid, $muda;
     
     //Metodos
-    protected function MontarArtigo($logicLink){
-        if ($logicLink == "true"){
-            echo "<center><img src='../{$this->getImagem()}'></center>";
-        } else {
-            echo "<center><img src='../../{$this->getImagem()}'></center>";
-        }
-        echo "<script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>\n
-            <!-- Propaganda lateral -->\n
-            <ins class=\"adsbygoogle\"
+    protected function MontarArtigo($logicLink, $quantMudanca){
+        echo "<iframe id='youtube' src='{$this->getVideo()}' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>";
+        echo "<ins class=\"adsbygoogle\"
                 style=\"display:inline-block;width:336px;height:280px\"
                 data-ad-client=\"ca-pub-6479735546054520\"
                 data-ad-slot=\"1126000179\">
@@ -26,23 +20,21 @@ class Atualizacao extends Conteudo{
         <script>\n
             (adsbygoogle = window.adsbygoogle || []).push({});\n
         </script>\n";
-        echo "<p>{$this->getCamp()}</p>";
-        echo "<p>{$this->getHabilid()}</p>";
-        echo "<p>{$this->getMuda()}</p>";
-        echo "<iframe id='youtube' src='{$this->getVideo()}' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>";
+        for($contar=$quantMudanca[0]; $contar>=$quantMudanca[1]; $contar--){
+            echo "<p id='campeao'>{$this->getCamp()[$contar]}</p>";
+            echo "<p id='habilidade'>{$this->getHabilid()[$contar]}</p>";
+            echo "<p id='mudanca'>{$this->getMuda()[$contar]}</p>";
+        }
+        if ($logicLink == "true"){
+            echo "<center><img id='tamsection' src='../{$this->getImagem()}'></center>";
+        } else {
+            echo "<center><img id='tamsection' src='../../{$this->getImagem()}'></center>";
+        }
         $this->FormularioComentario();
-    }
-    public function MontarMaisHabilidade($habilidade){
-        $this->setHabilid($habilid);
-        echo "<p>{$this->getHabilid()}</p>";
-    }
-    public function MontarMaisMudanca($mudanca){
-        $this->setMuda($mudanca);
-        echo "<p>{$this->getMuda()}</p>";
     }
 
     //Metodo Construdor
-    public function __construct($logicLink, $logicAside,$titulo, $subtitulo, $autoria, $data, $imagem, $video, $campeao, $habilidade, $mudanca, $pagRelaciona, $comentario) {
+    public function __construct($logicLink, $logicAside,$titulo, $subtitulo, $autoria, $data, $imagem, $video, $campeao, $habilidade, $mudanca, $pagRelaciona, $comentario, $quantMudanca) {
         parent::__construct($titulo, $subtitulo, $autoria, $data, $imagem, $video, $pagRelaciona);
         $this->setCamp($campeao);
         $this->setHabilid($habilidade);
@@ -52,7 +44,7 @@ class Atualizacao extends Conteudo{
         echo "<section>";
         echo "<article>";
         $this->MontarHgroup();
-        $this->MontarArtigo($logicLink);
+        $this->MontarArtigo($logicLink, $quantMudanca);
         echo "</article>";
         echo "</section>";
         if ($logicAside){

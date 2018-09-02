@@ -69,43 +69,38 @@ class PaginaInicial extends Pagina{
         $this->objDetalhes = new Detalhes();
         $this->setObjPesquisa(new QueryInicio()); //A Função setObjPesquisa vai receber a classe QueryInicio para fazer a pesquisas sobre os artigos dessa pagina.
         $this->getObjPesquisa()->QueryNotUm("titulo LIKE '%Imbatível%Kabum%liderança%'");
-        $this->getObjPesquisa()->QueryAtualizacao("versao LIKE '%8.1%'");
+        $this->getObjPesquisa()->QueryAtualizacao("versao LIKE '%801%'");
         $this->getObjPesquisa()->QueryTier("versao LIKE '%8.2%'");
         $this->getObjPesquisa()->QueryZoeras("subtitulo LIKE '%Shevii%fazendo%cagada%como%sempre%'");
 
         $this->fazerDetalhes = true;
-        if ($escolha == 0){
+        if ($this->getEscolha() == 0){
             if ($coment[1] != null){
                 $this->EnviarComent("noticia", $coment[0], $coment[1]);
             }
             $this->PesquisarComentario("noticia", null);// Ele estrega o getComentario definido na mãe "Pagina.php" ("qual pagina do comentario", "data especifica do comentario")
-            $this->PassarValores("Noticia");
+            $this->ValoresNotZoe();
         }
-        elseif ($escolha == 1){
+        elseif ($this->getEscolha() == 1){
             if ($coment[1] != null){
                 $this->EnviarComent("atualizacao", $coment[0], $coment[1]);
             }
             $this->PesquisarComentario("atualizacao", null);// Ele estrega o getComentario definido na mãe "Pagina.php" ("qual pagina do comentario", "data especifica do comentario")
-            $this->PassarValores("Atualizacao");
-            if ($this->getCampeao() || NULL && $this->getHabilidade() == NULL || $this->getMudanca() == NULL){
-                $this->setCampeao($this->getObjPesquisa()->getResultado()[$this->getEscolha()][7]);
-                $this->setHabilidade($this->getObjPesquisa()->getResultado()[$this->getEscolha()][8]);
-                $this->setMudanca($this->getObjPesquisa()->getResultado()[$this->getEscolha()][9]);
-            }
+            $this->ValoresAtualizacao();
         }
-        elseif ($escolha == 2){
+        elseif ($this->getEscolha() == 2){
             if ($coment[1] != null){
                 $this->EnviarComent("tierlist", $coment[0], $coment[1]);
             }
             $this->PesquisarComentario("tierlist", null);// Ele estrega o getComentario definido na mãe "Pagina.php" ("qual pagina do comentario", "data especifica do comentario")
-            $this->PassarValores("Tier");
+            $this->ValoresTier();
         }
-        elseif ($escolha == 3){
+        elseif ($this->getEscolha() == 3){
             if ($coment[1] != null){
                 $this->EnviarComent("zoera", $coment[0], $coment[1]);
             }
             $this->PesquisarComentario("zoera", null);// Ele estrega o getComentario definido na mãe "Pagina.php" ("qual pagina do comentario", "data especifica do comentario")
-            $this->PassarValores("Zoera");
+            $this->ValoresNotZoe();
         }
     }
     public function getObjConteudo(){

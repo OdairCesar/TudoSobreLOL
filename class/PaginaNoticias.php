@@ -70,13 +70,13 @@ class PaginaNoticias extends Pagina{
         $this->setObjPesquisa(new QueryNoticia());
         if ($logico){
             $this->objPesquisa->QueryWhere("titulo LIKE $pesquisa");
-            $escolha = 0;
+            $this->setEscolha(0);
             $this->fazerDetalhes = false;
         }else{
             $this->getObjPesquisa()->QueryLimit(4);
             $this->fazerDetalhes = true;
         }
-        $this->PassarValores("Noticia");
+        $this->ValoresNotZoe();
     }
 
     public function getObjConteudo(){

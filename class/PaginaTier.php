@@ -64,13 +64,13 @@ class PaginaTier extends Pagina{
         $this->setObjPesquisa(new QueryTier());
         if ($logico){
             $this->objPesquisa->QueryWhere("titulo LIKE $pesquisa");
-            $escolha = 0;
+            $this->setEscolha(0);
             $this->fazerDetalhes = false;
         }else{
             $this->getObjPesquisa()->QueryLimit(4);
             $this->fazerDetalhes = true;
         }
-        $this->PassarValores("Tier");
+        $this->ValoresTier();
     }
     public function getObjConteudo(){
         return $this->objConteudo;

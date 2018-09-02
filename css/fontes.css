@@ -156,6 +156,32 @@ article p{
     margin: 5px 5px;
     padding: 5px;
 }
+article p#campeao{
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    width: 200px;
+    margin: 7px 0px 0px 0px;
+    font-weight: 600;
+    background-color: rgba(107,0,198,.5);
+}
+article p#habilidade{
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    font-size: 12pt;
+    width: 500px;
+    margin: 0px;
+    font-weight: 600;
+    background-color: rgba(107,0,198,.3);
+}
+article p#mudanca{
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    font-size: 13pt;
+    width: 800px;
+    margin: 0px;
+    font-weight: 400;
+    background-color: rgba(107,0,198,.1);
+}
 article a{
     color: red;
 }
