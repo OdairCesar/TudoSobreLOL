@@ -25,4 +25,5 @@
 		<b>Colunas:</b> id (chave primaria), versao (varchar 30), descricao (varchar), lancamento (date), criador (varchar), site_origem (varchar), imagem (varchar), video (varchar), bufs (varchar), nerfs (varchar), tabela (varchar), explicacao (text)</li>
 	<ul>
 </body>
-</html
+</html>
+
