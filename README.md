@@ -1,3 +1,4 @@
+<html>
 <body>
 	<h1>Tudo sobre LOL</h1>
 	<h2>Site desenvolvido em PHP para tornar as postagens do site <a href="http://tslol.000webhostapp.com" target="_blank">tudo sobre LOL</a> mais praticas</h2>
@@ -24,3 +25,4 @@
 		<b>Colunas:</b> id (chave primaria), versao (varchar 30), descricao (varchar), lancamento (date), criador (varchar), site_origem (varchar), imagem (varchar), video (varchar), bufs (varchar), nerfs (varchar), tabela (varchar), explicacao (text)</li>
 	<ul>
 </body>
+</html
